@@ -2,18 +2,18 @@
   <div>
     <button type="button" @click="submit(); dataCount()">送信</button>
     <p>あなたは世界一堅牢なセキュリティを突破した{{ count }}人目のハッカーです。</p>
-    <Dialogs></Dialogs>
+    <RecaptchaDialogs></RecaptchaDialogs>
   </div>
 
 </template>
 
 <script>
 import firebase from '@/plugins/firebase'
-import Dialogs from '@/components/Dialogs.vue'
+import RecaptchaDialogs from '~/components/RecaptchaDialogs.vue'
 let database = firebase.database()
 export default {
   componets: {
-    Dialogs
+    RecaptchaDialogs
   },
   data () {
     return {
