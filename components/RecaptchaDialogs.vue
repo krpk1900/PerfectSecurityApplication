@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="privacyPolicy" width="550" scrollable>
+  <v-dialog v-model="privacyPolicy" width="520" scrollable>
     <template v-slot:activator="{ on, attrs }">
       <a v-bind="attrs" v-on="on" style="color: #099e9e;">Privacy Policy</a>
     </template>
@@ -24,13 +24,22 @@
         <img src="dog4.jpg" width="150px" class="picture">
         <img src="bagel5.jpg" width="150px" class="picture">
       </v-card-actions>
+      <v-card-actions>
+        <v-icon class="icon text-h3">mdi-refresh</v-icon>
+        <v-icon class="icon text-h3">mdi-headset</v-icon>
+        <v-icon class="icon text-h3">mdi-information-outline</v-icon>
+
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <style>
   .picture {
-    margin: 10px;
+    margin: 5px;
+  }
+  .icon {
+    margin: 0 10px;
   }
 </style>
 
