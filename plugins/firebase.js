@@ -1,4 +1,5 @@
 import firebase from "firebase/app"
+import "firebase/database"
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
@@ -11,6 +12,6 @@ if (!firebase.apps.length) {
     appId: "1:228413106775:web:270d6b74829b032f4a5112",
     measurementId: "G-T1F6XS6CX1"
   })
-  }
+}
 
-  export default firebase
+export default firebase
