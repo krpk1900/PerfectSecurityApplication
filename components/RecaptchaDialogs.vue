@@ -60,14 +60,14 @@
     margin: 0 0 0 auto;
   }
   .selected {
-    opacity: 0.8;
+    opacity: 0.7;
   }
   .picture-area {
     display: inline-block;
     width: 150px;
     height: 150px;
     margin: -5px 5px;
-    background-color: blue;
+    background-color: royalblue;
   }
 </style>
 
