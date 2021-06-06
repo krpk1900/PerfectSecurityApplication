@@ -17,10 +17,10 @@
     target-name='モップ' stage-num='3' image-name1='mop1.jpg' image-name2='sheepdog1.jpg' image-name3='mop2.jpg' image-name4='sheepdog2.jpg'
     image-name5='mop3.jpg' image-name6='sheepdog3.jpg' image-name7='mop4.jpg' image-name8='sheepdog4.jpg' image-name9='mop5.jpg' @success="isShowDialogs4 = true">
     </RecaptchaDialogs>
-    <!-- ステージ4 (モップとシープドッグ) -->
-    <RecaptchaDialogs v-if="isShowDialogs3"
-    target-name='モップ' stage-num='3' image-name1='mop1.jpg' image-name2='sheepdog1.jpg' image-name3='mop2.jpg' image-name4='sheepdog2.jpg'
-    image-name5='mop3.jpg' image-name6='sheepdog3.jpg' image-name7='mop4.jpg' image-name8='sheepdog4.jpg' image-name9='mop5.jpg' @success="isShowDialogs4 = true">
+    <!-- ステージ4 (フライドチキンとラブラドードル) -->
+    <RecaptchaDialogs v-if="isShowDialogs4"
+    target-name='フライドチキン' stage-num='4' image-name1='chicken1.jpg' image-name2='labradoodle1.jpg' image-name3='chicken2.jpg' image-name4='labradoodle2.jpg'
+    image-name5='chicken3.jpg' image-name6='labradoodle3.jpg' image-name7='chicken4.jpg' image-name8='labradoodle4.jpg' image-name9='chicken5.jpg' @success="isShowDialogs5 = true">
     </RecaptchaDialogs>
   </div>
 
