@@ -32,6 +32,11 @@
     target-name='焼いたマシュマロ' stage-num='6' image-name1='marshmallow1.jpg' image-name2='shiba1.jpg' image-name3='marshmallow2.jpg' image-name4='shiba2.jpg'
     image-name5='marshmallow3.jpg' image-name6='shiba3.jpg' image-name7='marshmallow4.jpg' image-name8='shiba4.jpg' image-name9='marshmallow5.jpg' @success="isShowDialogs7 = true">
     </RecaptchaDialogs>
+    <!-- ステージ7 (ふじとその他のりんご) -->
+    <RecaptchaDialogs v-if="isShowDialogs7"
+    target-name='ふじ' stage-num='7' image-name1='fuji1.jpg' image-name2='apple1.jpg' image-name3='fuji2.jpg' image-name4='apple2.jpg'
+    image-name5='fuji3.jpg' image-name6='apple3.jpg' image-name7='fuji4.jpg' image-name8='apple4.jpg' image-name9='fuji5.jpg' @success="isShowDialogs8 = true">
+    </RecaptchaDialogs>
   </div>
 
 </template>
