@@ -11,6 +11,11 @@
     target-name='チワワ' stage-num='2' image-name1='chihuahua1.jpg' image-name2='muffin1.jpg' image-name3='chihuahua2.jpg' image-name4='muffin2.jpg'
     image-name5='chihuahua3.jpg' image-name6='muffin3.jpg' image-name7='chihuahua4.jpg' image-name8='muffin4.jpg' image-name9='chihuahua5.jpg' @success="isShowDialogs3 = true">
     </RecaptchaDialogs>
+
+    <RecaptchaDialogs v-if="isShowDialogs3"
+    target-name='モップ' stage-num='3' image-name1='mop1.jpg' image-name2='sheepdog1.jpg' image-name3='mop2.jpg' image-name4='sheepdog2.jpg'
+    image-name5='mop3.jpg' image-name6='sheepdog3.jpg' image-name7='mop4.jpg' image-name8='sheepdog4.jpg' image-name9='mop5.jpg' @success="isShowDialogs4 = true">
+    </RecaptchaDialogs>
   </div>
 
 </template>
