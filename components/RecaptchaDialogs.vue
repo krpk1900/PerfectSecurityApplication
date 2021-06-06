@@ -1,10 +1,10 @@
 <template>
-  <v-dialog v-model="privacyPolicy" width="510" persistent>
+  <v-dialog v-model="isShowDialog" width="510" persistent>
     <template v-slot:activator="{ on, attrs }">
       <a v-bind="attrs" v-on="on" style="color: #099e9e;">Privacy Policy</a>
     </template>
     <v-card>
-      <v-card-title class="light-blue text-h3 font-weight-black white--text">ベーグル</v-card-title>
+      <v-card-title class="light-blue text-h3 font-weight-black white--text">{{ targetName }}</v-card-title>
       <v-card-subtitle class="light-blue text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
@@ -77,7 +77,7 @@
 <script>
 export default {
   data: () => ({
-    privacyPolicy: true,
+    isShowDialog: true,
     isSelected1: false,
     isSelected2: false,
     isSelected3: false,
@@ -91,16 +91,21 @@ export default {
   }),
   methods: {
     check () {
-      console.log('aaa')
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
           && !this.isSelected6 && this.isSelected7 && !this.isSelected8 && this.isSelected9) {
-        this.wrongText = '　'
+        this.wrongText = '　';
+        this.isShowDialog = false;
+        this.$emit('success')
       } else {
         this.wrongText = '間違っています。'
       }
     },
   },
   props: {
+    targetName: {
+      type: String,
+      default: 'エラーが起きてます'
+    },
     imageName1: {
       type: String,
       default: 'error.jpg'
