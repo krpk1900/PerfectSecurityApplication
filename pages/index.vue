@@ -37,6 +37,11 @@
     target-name='ふじ' stage-num='7' image-name1='fuji1.jpg' image-name2='apple1.jpg' image-name3='fuji2.jpg' image-name4='apple2.jpg'
     image-name5='fuji3.jpg' image-name6='apple3.jpg' image-name7='fuji4.jpg' image-name8='apple4.jpg' image-name9='fuji5.jpg' @success="isShowDialogs8 = true">
     </RecaptchaDialogs>
+    <!-- ステージ8 (あまおうとその他のいちご) -->
+    <RecaptchaDialogs v-if="isShowDialogs8"
+    target-name='あまおう' stage-num='8' image-name1='amaou1.jpg' image-name2='strawberry1.jpg' image-name3='amaou2.jpg' image-name4='strawberry2.jpg'
+    image-name5='amaou3.jpg' image-name6='strawberry3.jpg' image-name7='amaou4.jpg' image-name8='strawberry4.jpg' image-name9='amaou5.jpg' @success="isShowDialogs9 = true">
+    </RecaptchaDialogs>
   </div>
 
 </template>
