@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="isShowDialog" width="510" persistent>
     <template v-slot:activator="{ on, attrs }">
-      <a v-bind="attrs" v-on="on" style="color: #099e9e;">Privacy Policy</a>
+      <a v-bind="attrs" v-on="on" style="color: #099e9e;">　</a>
     </template>
     <v-card>
       <div class="light-blue white--text">

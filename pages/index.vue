@@ -22,6 +22,11 @@
     target-name='フライドチキン' stage-num='4' image-name1='chicken1.jpg' image-name2='labradoodle1.jpg' image-name3='chicken2.jpg' image-name4='labradoodle2.jpg'
     image-name5='chicken3.jpg' image-name6='labradoodle3.jpg' image-name7='chicken4.jpg' image-name8='labradoodle4.jpg' image-name9='chicken5.jpg' @success="isShowDialogs5 = true">
     </RecaptchaDialogs>
+    <!-- ステージ5 (ネコとアイス) -->
+    <RecaptchaDialogs v-if="isShowDialogs5"
+    target-name='ネコ' stage-num='5' image-name1='cat1.jpg' image-name2='ice1.jpg' image-name3='cat2.jpg' image-name4='ice2.jpg'
+    image-name5='cat3.jpg' image-name6='ice3.jpg' image-name7='cat4.jpg' image-name8='ice4.jpg' image-name9='cat5.jpg' @success="isShowDialogs6 = true">
+    </RecaptchaDialogs>
   </div>
 
 </template>
