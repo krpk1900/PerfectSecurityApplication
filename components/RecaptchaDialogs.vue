@@ -14,35 +14,35 @@
       </v-card-subtitle>
       <v-card-actions style="margin-top: 5px;">
         <span class="picture-area">
-          <img src="bagel1.jpg" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
+          <img :src="imageName1" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
         <span class="picture-area">
-          <img src="dog1.jpg" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
+          <img :src="imageName2" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
         </span>
         <span class="picture-area">
-          <img src="bagel2.jpg" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
-        </span>
-      </v-card-actions>
-      <v-card-actions>
-        <span class="picture-area">
-          <img src="dog2.jpg" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
-        </span>
-        <span class="picture-area">
-          <img src="bagel3.jpg" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
-        </span>
-        <span class="picture-area">
-          <img src="dog3.jpg" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+          <img :src="imageName3" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
         </span>
       </v-card-actions>
       <v-card-actions>
         <span class="picture-area">
-          <img src="bagel4.jpg" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+          <img :src="imageName4" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
         </span>
         <span class="picture-area">
-          <img src="dog4.jpg" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+          <img :src="imageName5" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
         </span>
         <span class="picture-area">
-          <img src="bagel5.jpg" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
+          <img :src="imageName6" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+        </span>
+      </v-card-actions>
+      <v-card-actions>
+        <span class="picture-area">
+          <img :src="imageName7" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+        </span>
+        <span class="picture-area">
+          <img :src="imageName8" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+        </span>
+        <span class="picture-area">
+          <img :src="imageName9" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
         </span>
       </v-card-actions>
       <v-card-actions>
@@ -98,7 +98,45 @@ export default {
       } else {
         this.wrongText = '間違っています。'
       }
-    }
+    },
+  },
+  props: {
+    imageName1: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName2: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName3: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName4: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName5: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName6: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName7: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName8: {
+      type: String,
+      default: 'error.jpg'
+    },
+    imageName9: {
+      type: String,
+      default: 'error.jpg'
+    },
   }
 }
 </script>
