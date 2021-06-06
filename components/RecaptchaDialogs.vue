@@ -1,17 +1,22 @@
 <template>
-  <v-dialog v-model="privacyPolicy" width="510" persistent>
+  <v-dialog v-model="isShowDialog" width="510" persistent>
     <template v-slot:activator="{ on, attrs }">
       <a v-bind="attrs" v-on="on" style="color: #099e9e;">Privacy Policy</a>
     </template>
     <v-card>
-      <v-card-title class="light-blue text-h3 font-weight-black white--text">ベーグル</v-card-title>
-      <v-card-subtitle class="light-blue text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
+      <div class="light-blue white--text">
+
+      <v-card-title class="text-h3 font-weight-black" style="width: 440px; display: inline-block;">{{ targetName }}</v-card-title>
+      <span class="font-weight-black text-h6" style="display: inline-block; width: 50px; vertical-align: top; margin-top: 10px;">({{ stageNum }}/5)</span>
+      <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
         <span style="color: #dc3545 !important;" class="font-weight-bold">
           {{ wrongText }}
         </span>
       </v-card-subtitle>
+      </div>
+
       <v-card-actions style="margin-top: 5px;">
         <span class="picture-area">
           <img :src="imageName1" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
@@ -77,7 +82,7 @@
 <script>
 export default {
   data: () => ({
-    privacyPolicy: true,
+    isShowDialog: true,
     isSelected1: false,
     isSelected2: false,
     isSelected3: false,
@@ -91,16 +96,25 @@ export default {
   }),
   methods: {
     check () {
-      console.log('aaa')
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
           && !this.isSelected6 && this.isSelected7 && !this.isSelected8 && this.isSelected9) {
-        this.wrongText = '　'
+        this.wrongText = '　';
+        this.isShowDialog = false;
+        this.$emit('success')
       } else {
         this.wrongText = '間違っています。'
       }
     },
   },
   props: {
+    targetName: {
+      type: String,
+      default: 'エラーが起きてます'
+    },
+    stageNum: {
+      type: String,
+      default: '1'
+    },
     imageName1: {
       type: String,
       default: 'error.jpg'
