@@ -5,11 +5,14 @@
     </template>
     <v-card>
       <v-card-title class="light-blue text-h3 font-weight-black white--text">ベーグル</v-card-title>
-      <v-card-subtitle class="light-blue text-body-1 font-weight-black white--text" style="margin-bottom: 10px;">
+      <v-card-subtitle class="light-blue text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
+        <span style="color: #dc3545 !important;" class="font-weight-bold">
+          {{ wrongText }}
+        </span>
       </v-card-subtitle>
-      <v-card-actions>
+      <v-card-actions style="margin-top: 5px;">
         <span class="picture-area">
           <img src="bagel1.jpg" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
@@ -46,7 +49,7 @@
         <v-icon class="icon text-h3">mdi-refresh</v-icon>
         <v-icon class="icon text-h3">mdi-headset</v-icon>
         <v-icon class="icon text-h3">mdi-information-outline</v-icon>
-        <v-btn class="light-blue text-body-1 font-weight-bold white--text btn" tile width="170px" height="45px">確認</v-btn>
+        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="170px" height="45px">確認</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -84,15 +87,16 @@ export default {
     isSelected7: false,
     isSelected8: false,
     isSelected9: false,
-    isWrong: false,
+    wrongText: '　'
   }),
   methods: {
     check () {
+      console.log('aaa')
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
           && !this.isSelected6 && this.isSelected7 && !this.isSelected8 && this.isSelected9) {
-        this.isWrong = true;
+        this.wrongText = '　'
       } else {
-        this.isWrong = false;
+        this.wrongText = '間違っています。'
       }
     }
   }
