@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="privacyPolicy" width="510" scrollable>
+  <v-dialog v-model="privacyPolicy" width="510" persistent>
     <template v-slot:activator="{ on, attrs }">
       <a v-bind="attrs" v-on="on" style="color: #099e9e;">Privacy Policy</a>
     </template>
@@ -7,39 +7,39 @@
       <v-card-title class="light-blue text-h3 font-weight-black white--text">ベーグル</v-card-title>
       <v-card-subtitle class="light-blue text-body-1 font-weight-black white--text" style="margin-bottom: 10px;">
         のタイルをすべて選択してください。<br>
-        すべて選択し終わったら[確認]をクリックしてください。
+        すべて選択し終わったら[確認]をクリックしてください。<br>
       </v-card-subtitle>
       <v-card-actions>
         <span class="picture-area">
-          <img src="bagel1.jpg" width="150px" @click="isBagel1=!isBagel1" :class="{ selected: isBagel1}">
+          <img src="bagel1.jpg" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
         <span class="picture-area">
-          <img src="dog1.jpg" width="150px" @click="isDog1=!isDog1" :class="{ selected: isDog1}">
+          <img src="dog1.jpg" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
         </span>
         <span class="picture-area">
-          <img src="bagel2.jpg" width="150px" @click="isBagel2=!isBagel2" :class="{ selected: isBagel2}">
-        </span>
-      </v-card-actions>
-      <v-card-actions>
-        <span class="picture-area">
-          <img src="dog2.jpg" width="150px" @click="isDog2=!isDog2" :class="{ selected: isDog2}">
-        </span>
-        <span class="picture-area">
-          <img src="bagel3.jpg" width="150px" @click="isBagel3=!isBagel3" :class="{ selected: isBagel3}">
-        </span>
-        <span class="picture-area">
-          <img src="dog3.jpg" width="150px" @click="isDog3=!isDog3" :class="{ selected: isDog3}">
+          <img src="bagel2.jpg" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
         </span>
       </v-card-actions>
       <v-card-actions>
         <span class="picture-area">
-          <img src="bagel4.jpg" width="150px" @click="isBagel4=!isBagel4" :class="{ selected: isBagel4}">
+          <img src="dog2.jpg" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
         </span>
         <span class="picture-area">
-          <img src="dog4.jpg" width="150px" @click="isDog4=!isDog4" :class="{ selected: isDog4}">
+          <img src="bagel3.jpg" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
         </span>
         <span class="picture-area">
-          <img src="bagel5.jpg" width="150px" @click="isBagel5=!isBagel5" :class="{ selected: isBagel5}">
+          <img src="dog3.jpg" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+        </span>
+      </v-card-actions>
+      <v-card-actions>
+        <span class="picture-area">
+          <img src="bagel4.jpg" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+        </span>
+        <span class="picture-area">
+          <img src="dog4.jpg" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+        </span>
+        <span class="picture-area">
+          <img src="bagel5.jpg" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
         </span>
       </v-card-actions>
       <v-card-actions>
@@ -75,15 +75,26 @@
 export default {
   data: () => ({
     privacyPolicy: true,
-    isBagel1: false,
-    isBagel2: false,
-    isBagel3: false,
-    isBagel4: false,
-    isBagel5: false,
-    isDog1: false,
-    isDog2: false,
-    isDog3: false,
-    isDog4: false,
-  })
+    isSelected1: false,
+    isSelected2: false,
+    isSelected3: false,
+    isSelected4: false,
+    isSelected5: false,
+    isSelected6: false,
+    isSelected7: false,
+    isSelected8: false,
+    isSelected9: false,
+    isWrong: false,
+  }),
+  methods: {
+    check () {
+      if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
+          && !this.isSelected6 && this.isSelected7 && !this.isSelected8 && this.isSelected9) {
+        this.isWrong = true;
+      } else {
+        this.isWrong = false;
+      }
+    }
+  }
 }
 </script>
