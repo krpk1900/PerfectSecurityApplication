@@ -1,9 +1,9 @@
 <template>
   <div>
-    <button type="button" @click="submit(); dataCount()">送信</button>
-    <p>あなたは世界一堅牢なセキュリティを突破した{{ count }}人目のハッカーです。</p>
+    <button type="button" @click="submit(); dataCount();">送信</button>
+    <p v-if="isFinished">あなたは【世界一堅牢なセキュリティ】を突破した【{{ count }}】人目のハッカーです。</p>
     <!-- ステージ1 (マシュマロと柴犬) -->
-    <RecaptchaDialogs
+    <RecaptchaDialogs v-if="isShowDialogs1"
     target-name='焼マシュマロ' stage-num='1' image-name1='marshmallow1.jpg' image-name2='shiba1.jpg' image-name3='marshmallow2.jpg' image-name4='shiba2.jpg'
     image-name5='marshmallow3.jpg' image-name6='shiba3.jpg' image-name7='marshmallow4.jpg' image-name8='shiba4.jpg' image-name9='marshmallow5.jpg' @success="isShowDialogs2 = true">
     </RecaptchaDialogs>
@@ -50,10 +50,13 @@
     <!-- ステージ10 (スキマスイッチとその他のアフロ) -->
     <RecaptchaDialogs v-if="isShowDialogs10"
     target-name='スキマスイッチ' stage-num='10' image-name1='sukima1.jpg' image-name2='afro1.jpg' image-name3='sukima2.jpg' image-name4='afro2.jpg'
-    image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isShowDialogs11 = true">
+    image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isFinished = true; submit(); dataCount()">
     </RecaptchaDialogs>
-  </div>
 
+
+
+    <TwitterShareButton num="7"></TwitterShareButton>
+  </div>
 </template>
 
 <script>
@@ -67,6 +70,7 @@ export default {
   data () {
     return {
       count: 0,
+      isShowDialogs1: false,//true
       isShowDialogs2: false,
       isShowDialogs3: false,
       isShowDialogs4: false,
@@ -75,8 +79,8 @@ export default {
       isShowDialogs7: false,
       isShowDialogs8: false,
       isShowDialogs9: false,
-      isShowDialogs10: false,
-      isShowDialogs11: false,
+      isShowDialogs10: true,
+      isFinished: false,
     }
   },
   methods: {
