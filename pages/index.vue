@@ -29,7 +29,7 @@
     </RecaptchaDialogs>
     <!-- ステージ6 (マシュマロと柴犬) -->
     <RecaptchaDialogs v-if="isShowDialogs6"
-    target-name='焼いたマシュマロ' stage-num='6' image-name1='marshmallow1.jpg' image-name2='shiba1.jpg' image-name3='marshmallow2.jpg' image-name4='shiba2.jpg'
+    target-name='焼マシュマロ' stage-num='6' image-name1='marshmallow1.jpg' image-name2='shiba1.jpg' image-name3='marshmallow2.jpg' image-name4='shiba2.jpg'
     image-name5='marshmallow3.jpg' image-name6='shiba3.jpg' image-name7='marshmallow4.jpg' image-name8='shiba4.jpg' image-name9='marshmallow5.jpg' @success="isShowDialogs7 = true">
     </RecaptchaDialogs>
     <!-- ステージ7 (ふじとその他のりんご) -->
@@ -41,6 +41,11 @@
     <RecaptchaDialogs v-if="isShowDialogs8"
     target-name='あまおう' stage-num='8' image-name1='amaou1.jpg' image-name2='strawberry1.jpg' image-name3='amaou2.jpg' image-name4='strawberry2.jpg'
     image-name5='amaou3.jpg' image-name6='strawberry3.jpg' image-name7='amaou4.jpg' image-name8='strawberry4.jpg' image-name9='amaou5.jpg' @success="isShowDialogs9 = true">
+    </RecaptchaDialogs>
+    <!-- ステージ9 (スキマスイッチとその他のアフロ) -->
+    <RecaptchaDialogs v-if="isShowDialogs9"
+    target-name='スキマスイッチ' stage-num='9' image-name1='sukima1.jpg' image-name2='afro1.jpg' image-name3='sukima2.jpg' image-name4='afro2.jpg'
+    image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isShowDialogs10 = true">
     </RecaptchaDialogs>
   </div>
 
