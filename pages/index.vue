@@ -47,6 +47,11 @@
     target-name='スキマスイッチ' stage-num='9' image-name1='sukima1.jpg' image-name2='afro1.jpg' image-name3='sukima2.jpg' image-name4='afro2.jpg'
     image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isShowDialogs10 = true">
     </RecaptchaDialogs>
+    <!-- ステージ10 (スキマスイッチとその他のアフロ) -->
+    <RecaptchaDialogs v-if="isShowDialogs10"
+    target-name='小峠英二' stage-num='10' image-name1='kotouge1.jpg' image-name2='skinhead1.png' image-name3='kotouge2.png' image-name4='skinhead2.jpg'
+    image-name5='kotouge3.jpg' image-name6='skinhead3.jpg' image-name7='kotouge4.jpg' image-name8='skinhead4.jpg' image-name9='kotouge5.png' @success="isShowDialogs11 = true">
+    </RecaptchaDialogs>
   </div>
 
 </template>
