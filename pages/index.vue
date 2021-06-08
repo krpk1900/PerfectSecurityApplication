@@ -56,6 +56,9 @@
 
 
     <TwitterShareButton num="7"></TwitterShareButton>
+
+    <a href="https://twitter.com/share?url=https://sekigae.jp/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一堅牢なセキュリティ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【】人目のハッカーです。%0a"
+      rel="nofollow" target="_blank">リンクテキスト</a>
   </div>
 </template>
 
@@ -79,7 +82,7 @@ export default {
       isShowDialogs7: false,
       isShowDialogs8: false,
       isShowDialogs9: false,
-      isShowDialogs10: true,
+      isShowDialogs10: false,
       isFinished: false,
     }
   },
