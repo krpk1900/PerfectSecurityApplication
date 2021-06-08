@@ -5,7 +5,7 @@
     :data-url="dataUrl"
     :data-text="dataText"
     :data-lang="lang"
-    :data-size="large ? 'large' : undefined"
+    :data-size="large"
     :data-show-count="showCount"
     :data-hashtags="dataHashtag"
   >
@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .twitter-share-button {
 
 }
