@@ -53,14 +53,10 @@
     image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isFinished = true; submit(); dataCount()">
     </RecaptchaDialogs>
 
+    <v-btn :href="shareMessage()" target="_blank" style="text-transform: none">
+      <v-icon>mdi-twitter</v-icon>Twitterでシェア
+    </v-btn>
 
-
-    <TwitterShareButton num="7"></TwitterShareButton>
-
-    <a href="javascript:void(0);" onclick="test();" rel="nofollow" target="_blank">リンクテキスト</a>
-
-    <a href="https://twitter.com/share?url=https://sekigae.jp/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一堅牢なセキュリティ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【】人目のハッカーです。%0a"
-      rel="nofollow" target="_blank">リンクテキスト</a>
   </div>
 </template>
 
@@ -89,8 +85,8 @@ export default {
     }
   },
   methods: {
-    test () {
-      window.location.href='https://example.com/'+id+'/';
+    shareMessage () {
+      return `https://twitter.com/share?url=https://sekigae.jp/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一堅牢なセキュリティ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【${this.count}】人目のハッカーです。%0a`
     },
     // firebase
     submit () {

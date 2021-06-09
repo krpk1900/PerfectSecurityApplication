@@ -47,9 +47,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.twitter-share-button {
-
-}
-</style>
