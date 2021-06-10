@@ -1,7 +1,7 @@
 <template>
   <div>
     <button type="button" @click="submit(); dataCount();">送信</button>
-    <p v-if="isFinished">あなたは【世界一堅牢なセキュリティ】を突破した【{{ count }}】人目のハッカーです。</p>
+    <!--p v-if="isFinished">あなたは【世界一堅牢なセキュリティ】を突破した【{{ count }}】人目のハッカーです。</p-->
     <!-- ステージ1 (マシュマロと柴犬) -->
     <RecaptchaDialogs v-if="isShowDialogs1"
     target-name='焼マシュマロ' stage-num='1' image-name1='marshmallow1.jpg' image-name2='shiba1.jpg' image-name3='marshmallow2.jpg' image-name4='shiba2.jpg'
@@ -57,16 +57,19 @@
       <v-icon>mdi-twitter</v-icon>Twitterでシェア
     </v-btn>
 
+  <FinishedDialogs></FinishedDialogs>
   </div>
 </template>
 
 <script>
 import firebase from '@/plugins/firebase'
 import RecaptchaDialogs from '~/components/RecaptchaDialogs.vue'
+import FinishedDialogs from '~/components/FinishedDialogs.vue'
 let database = firebase.database()
 export default {
   componets: {
-    RecaptchaDialogs
+    RecaptchaDialogs,
+    FinishedDialogs
   },
   data () {
     return {
@@ -80,7 +83,7 @@ export default {
       isShowDialogs7: false,
       isShowDialogs8: false,
       isShowDialogs9: false,
-      isShowDialogs10: false,
+      isShowDialogs10: true,
       isFinished: false,
     }
   },
