@@ -5,9 +5,7 @@
     </template>
     <v-card>
 
-
-      <v-card-text class="light-blue text-h5 font-weight-black white--text" align="center" style="padding-top: 15px;">
-        <!--v-icon class="white--text" style="margin-right: 10px;">mdi-lock-open-variant</v-icon-->
+      <v-card-text class="light-blue font-weight-black white--text" align="center" style="padding-top: 20px; font-size: 27px;">
         セキュリティの突破に成功しました
       </v-card-text>
       <v-card-text class="text-body-1 font-weight-black" style="padding-top: 20px; font-size: 20px !important;" align="center">
@@ -22,8 +20,8 @@
       </div>
 
       <div style="text-align: center; padding-bottom: 10px;">
-        <v-btn :href="shareMessage()" target="_blank" style="text-transform: none" class="light-blue white--text">
-          <v-icon>mdi-twitter</v-icon>Twitterでシェア
+        <v-btn :href="shareMessage()" target="_blank" style="text-transform: none; font-size: 25px;" class="light-blue white--text font-weight-bold" x-large>
+          <v-icon style="font-size: 35px; margin-right: 5px;">mdi-twitter</v-icon>Twitterでシェアする
         </v-btn>
       </div>
 
@@ -32,9 +30,6 @@
 </template>
 
 <style>
-a {
-  color: lightblue;
-}
 </style>
 
 <script>
