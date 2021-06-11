@@ -10,33 +10,26 @@
         <!--v-icon class="white--text" style="margin-right: 10px;">mdi-lock-open-variant</v-icon-->
         セキュリティの突破に成功しました
       </v-card-title>
-      <v-card-text class="text-body-1 font-weight-black" style="padding-top: 10px;">
+      <v-card-text class="text-body-1 font-weight-black" style="padding-top: 10px; font-size: 20px !important;">
         あなたは、世界一堅牢なセキュリティを突破した<br>
         【{{this.count}}】人目のハッカーです。
       </v-card-text>
 
-      <v-btn :href="shareMessage()" target="_blank" style="text-transform: none">
-        <v-icon>mdi-twitter</v-icon>Twitterでシェア
-      </v-btn>
+      <div style="text-align: center;">
+        <img src="unlock.png" width="150px" >
+      </div>
+
+      <div style="text-align: center; padding-bottom: 10px;">
+        <v-btn :href="shareMessage()" target="_blank" style="text-transform: none" class="light-blue white--text">
+          <v-icon>mdi-twitter</v-icon>Twitterでシェア
+        </v-btn>
+      </div>
 
     </v-card>
   </v-dialog>
 </template>
 
 <style>
-  .btn {
-    margin: 0 0 0 auto;
-  }
-  .selected {
-    opacity: 0.7;
-  }
-  .picture-area {
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin: -5px 5px;
-    background-color: royalblue;
-  }
 </style>
 
 <script>
