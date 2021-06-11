@@ -82,9 +82,9 @@ export default {
       isShowDialogs6: false,
       isShowDialogs7: false,
       isShowDialogs8: false,
-      isShowDialogs9: false,
+      isShowDialogs9: true,
       isShowDialogs10: false,
-      isFinished: true,
+      isFinished: false,
     }
   },
   methods: {

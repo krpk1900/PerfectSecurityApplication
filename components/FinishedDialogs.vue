@@ -6,13 +6,15 @@
     <v-card>
 
 
-      <v-card-title class="light-blue text-h5 font-weight-black white--text">
+      <v-card-text class="light-blue text-h5 font-weight-black white--text" align="center" style="padding-top: 15px;">
         <!--v-icon class="white--text" style="margin-right: 10px;">mdi-lock-open-variant</v-icon-->
         セキュリティの突破に成功しました
-      </v-card-title>
-      <v-card-text class="text-body-1 font-weight-black" style="padding-top: 10px; font-size: 20px !important;">
-        あなたは、世界一堅牢なセキュリティを突破した<br>
-        【{{this.count}}】人目のハッカーです。
+      </v-card-text>
+      <v-card-text class="text-body-1 font-weight-black" style="padding-top: 20px; font-size: 20px !important;" align="center">
+        あなたは世界一堅牢なセキュリティを突破した<br>
+        <br><br>
+        <span style="font-size: 100px !important;" class="light-blue--text">{{this.count}}</span>
+        人目のハッカーです。
       </v-card-text>
 
       <div style="text-align: center;">
@@ -30,6 +32,9 @@
 </template>
 
 <style>
+a {
+  color: lightblue;
+}
 </style>
 
 <script>
