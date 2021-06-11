@@ -7,6 +7,7 @@
 
 
       <v-card-title class="light-blue text-h5 font-weight-black white--text">
+        <!--v-icon class="white--text" style="margin-right: 10px;">mdi-lock-open-variant</v-icon-->
         セキュリティの突破に成功しました
       </v-card-title>
       <v-card-text class="text-body-1 font-weight-black" style="padding-top: 10px;">
@@ -51,7 +52,7 @@ export default {
   props: {
     count: {
       type: String,
-      default: '3'
+      default: '1223'
     },
   }
 }

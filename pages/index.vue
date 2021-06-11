@@ -45,19 +45,19 @@
     <!-- ステージ9 (モップとシープドッグ) -->
     <RecaptchaDialogs v-if="isShowDialogs9"
     target-name='モップ' stage-num='9' image-name1='mop1.jpg' image-name2='sheepdog1.jpg' image-name3='mop2.jpg' image-name4='sheepdog2.jpg'
-    image-name5='mop3.jpg' image-name6='sheepdog3.jpg' image-name7='mop4.jpg' image-name8='sheepdog4.jpg' image-name9='mop5.jpg' @success="isShowDialogs10 = true">
+    image-name5='mop3.jpg' image-name6='sheepdog3.jpg' image-name7='mop4.jpg' image-name8='sheepdog4.jpg' image-name9='mop5.jpg' @success="isShowDialogs10 = true; submit(); dataCount()">
     </RecaptchaDialogs>
     <!-- ステージ10 (スキマスイッチとその他のアフロ) -->
     <RecaptchaDialogs v-if="isShowDialogs10"
     target-name='スキマスイッチ' stage-num='10' image-name1='sukima1.jpg' image-name2='afro1.jpg' image-name3='sukima2.jpg' image-name4='afro2.jpg'
-    image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isFinished = true; submit(); dataCount()">
+    image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isFinished = true;">
     </RecaptchaDialogs>
 
     <v-btn :href="shareMessage()" target="_blank" style="text-transform: none">
       <v-icon>mdi-twitter</v-icon>Twitterでシェア
     </v-btn>
 
-  <FinishedDialogs></FinishedDialogs>
+    <FinishedDialogs v-if="isFinished" :count="this.count"></FinishedDialogs>
   </div>
 </template>
 
@@ -82,8 +82,8 @@ export default {
       isShowDialogs6: false,
       isShowDialogs7: false,
       isShowDialogs8: false,
-      isShowDialogs9: false,
-      isShowDialogs10: true,
+      isShowDialogs9: true,
+      isShowDialogs10: false,
       isFinished: false,
     }
   },
