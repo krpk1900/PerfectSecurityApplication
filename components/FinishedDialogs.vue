@@ -25,6 +25,12 @@
         </v-btn>
       </div>
 
+      <div style="text-align: center; padding-bottom: 10px;">
+        <v-btn @click="send()" style="text-transform: none; font-size: 25px;" class="teal lighten-2 white--text font-weight-bold" x-large>
+          はじめから
+        </v-btn>
+      </div>
+
     </v-card>
   </v-dialog>
 </template>
@@ -41,11 +47,15 @@ export default {
     shareMessage () {
       return `https://twitter.com/share?url=https://sekigae.jp/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一堅牢なセキュリティ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【${this.count}】人目のハッカーです。%0a`
     },
+    send () {
+      console.log('send()が呼ばれました。')
+      this.$emit("restart", true);
+    }
   },
   props: {
     count: {
-      type: String,
-      default: '1223'
+      type: Number,
+      default: 1223
     },
   }
 }
