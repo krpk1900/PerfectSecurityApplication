@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <button type="button" @click="submit(); dataCount();">送信</button>
+  <div class="background">
+    <!--button type="button" @click="submit(); dataCount();">送信</button-->
     <!--p v-if="isFinished">あなたは【世界一堅牢なセキュリティ】を突破した【{{ count }}】人目のハッカーです。</p-->
     <!-- ステージ1 (マシュマロと柴犬) -->
     <RecaptchaDialogs v-if="isShowDialogs1"
@@ -53,10 +53,6 @@
     image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png' @success="isFinished = true;">
     </RecaptchaDialogs>
 
-    <v-btn :href="shareMessage()" target="_blank" style="text-transform: none">
-      <v-icon>mdi-twitter</v-icon>Twitterでシェア
-    </v-btn>
-
     <FinishedDialogs v-if="isFinished" :count="this.count"></FinishedDialogs>
   </div>
 </template>
@@ -107,3 +103,15 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  .background{
+    height: 100vh;
+    background-image: url(/background.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #292626;
+  }
+</style>
