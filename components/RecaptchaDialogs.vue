@@ -84,9 +84,14 @@
                     1.このアプリは<a href="https://www.google.com/recaptcha/about/" target="_blank" rel="noopener noreferrer">Google reCAPTCHA</a>のパロディであり、
                     <a href="https://www.google.com/recaptcha/about/" target="_blank" rel="noopener noreferrer">本家reCAPTCHA</a>とは関係ありません。<br>
                     2.このアプリでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用し、データの収集のためにCookieを使用しています。
-                    この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
+                    この機能はCookieを無効にすることで収集を拒否することができますので、お使いのブラウザの設定をご確認ください。
                     この規約に関しての詳細は<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener noreferrer">Googleアナリティクスサービス利用規約</a>や
                     <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Googleポリシーと規約</a>をご覧ください。<br>
+                    3.このアプリで使用しているコンテンツは
+                    <a href="https://twitter.com/KYSdane/status/1196084961289261058?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1196084961289261058%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2FKYSdane2Fstatus2F1196084961289261058widget%3DTweet" target="_blank" rel="noopener noreferrer">@KYSdaneさんの投稿</a>・
+                    <a href="https://twitter.com/marugotoaomori/status/1364772606650572802?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1364772606650572802%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2Fmarugotoaomori2Fstatus2F1364772606650572802widget%3DTweet" target="_blank" rel="noopener noreferrer">@marugotoaomoriさんの投稿</a>・
+                    <a href="https://front-row.jp/_ct/17135189" target="_blank" rel="noopener noreferrer">FRONTROWの記事</a>を参考に作成させていただきました。<br>
+                    4.何かお気づきの点がございましたら、<a href="https://twitter.com/krpk1900_dev" target="_blank" rel="noopener noreferrer">@krpk1900_dev</a>までご連絡ください。
                   </v-card-text>
                 </v-card>
               </v-dialog>
