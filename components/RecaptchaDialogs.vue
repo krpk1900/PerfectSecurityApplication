@@ -51,9 +51,24 @@
         </span>
       </v-card-actions>
       <v-card-actions>
-        <v-icon class="icon text-h3">mdi-refresh</v-icon>
-        <v-icon class="icon text-h3">mdi-headset</v-icon>
-        <v-icon class="icon text-h3">mdi-information-outline</v-icon>
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
+          </template>
+          <span>諦める場合ロボットとみなします。</span>
+        </v-tooltip>
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-headset</v-icon>
+          </template>
+          <span>諦める場合ロボットとみなします。</span>
+        </v-tooltip>
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
+          </template>
+          <span>諦める場合ロボットとみなします。</span>
+        </v-tooltip>
         <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="170px" height="45px">確認</v-btn>
       </v-card-actions>
     </v-card>
