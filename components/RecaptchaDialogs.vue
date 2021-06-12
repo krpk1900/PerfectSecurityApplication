@@ -76,6 +76,7 @@
     height: 150px;
     margin: -5px 5px;
     background-color: royalblue;
+    cursor: pointer;
   }
 </style>
 
