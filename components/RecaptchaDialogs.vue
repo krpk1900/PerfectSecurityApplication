@@ -55,7 +55,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
           </template>
-          <span>諦める場合ロボットとみなします。</span>
+          <span>ヒント：前問の解答との配置関係</span>
         </v-tooltip>
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
@@ -63,12 +63,38 @@
           </template>
           <span>諦める場合ロボットとみなします。</span>
         </v-tooltip>
-        <v-tooltip top>
+        <!--v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
           </template>
-          <span>諦める場合ロボットとみなします。</span>
+          <span>このアプリについて</span>
+        </v-tooltip-->
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <div v-bind="attrs" v-on="on">
+              <v-dialog v-model="isShowPolicy" width="600" hide-overlay>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
+                </template>
+                <v-card>
+                  <v-card-title class="headline grey lighten-2 font-weight-black" style="display: block;">このアプリについて
+                    <v-icon style="float: right;" @click="isShowPolicy = false">mdi-close</v-icon>
+                  </v-card-title>
+                  <v-card-text style="margin-top: 20px;">
+                    1.このアプリは<a href="https://www.google.com/recaptcha/about/" target="_blank" rel="noopener noreferrer">Google reCAPTCHA</a>のパロディであり、
+                    <a href="https://www.google.com/recaptcha/about/" target="_blank" rel="noopener noreferrer">本家reCAPTCHA</a>とは関係ありません。<br>
+                    2.このアプリでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用し、データの収集のためにCookieを使用しています。
+                    この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
+                    この規約に関しての詳細は<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener noreferrer">Googleアナリティクスサービス利用規約</a>や
+                    <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Googleポリシーと規約</a>をご覧ください。<br>
+                  </v-card-text>
+                </v-card>
+              </v-dialog>
+            </div>
+          </template>
+          <span>このアプリについて</span>
         </v-tooltip>
+
         <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="170px" height="45px">確認</v-btn>
       </v-card-actions>
     </v-card>
@@ -108,7 +134,9 @@ export default {
     isSelected7: false,
     isSelected8: false,
     isSelected9: false,
-    wrongText: '　'
+    wrongText: '　',
+    isShowPolicy: false,
+
   }),
   methods: {
     check () {
@@ -118,7 +146,7 @@ export default {
         this.isShowDialog = false;
         this.$emit('success')
       } else {
-        this.wrongText = '間違っています。'
+        this.wrongText = '間違っています。ヒント：左下のアイコン'
       }
     },
   },
