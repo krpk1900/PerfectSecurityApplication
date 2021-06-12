@@ -9,15 +9,23 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - PerfectSecurityApplication',
-    title: 'PerfectSecurityApplication',
+    //titleTemplate: '%s - PerfectSecurityApplication',
+    title: '世界一セキュリティが堅牢なアプリ',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja',
+      prefix: 'og: http://ogp.me/ns#'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '世界一セキュリティが堅牢なアプリです。' },
+      { hid: 'og:site_name', property: 'og:site_name', content: '世界一セキュリティが堅牢なアプリ' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://perfectsecurityapplication.web.app' },
+      { hid: 'og:title', property: 'og:title', content: '世界一セキュリティが堅牢なアプリ' },
+      { hid: 'og:description', property: 'og:description', content: '世界一セキュリティが堅牢なアプリです。' },
+      { hid: 'og:image', property: 'og:image', content: '/ogp.jpg' },
+      { name: 'twitter:card', content: 'summary_large_image' },　//twitterの画像サイズ
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
