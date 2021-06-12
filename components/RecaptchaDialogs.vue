@@ -100,7 +100,8 @@
           <span>このアプリについて</span>
         </v-tooltip>
 
-        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="170px" height="45px">確認</v-btn>
+        <v-btn @click="giveup" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="100px" height="45px">諦める</v-btn>
+        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="150px" height="45px">確認</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -153,6 +154,10 @@ export default {
       } else {
         this.wrongText = '間違っています。ヒント：左下のアイコン'
       }
+    },
+    giveup () {
+      this.isShowDialog = false;
+      this.$emit('giveup')
     },
   },
   props: {

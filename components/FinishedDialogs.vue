@@ -26,7 +26,7 @@
       </div>
 
       <div style="text-align: center; padding-bottom: 10px;">
-        <v-btn @click="send()" style="text-transform: none; font-size: 25px;" class="teal lighten-2 white--text font-weight-bold" x-large>
+        <v-btn @click="send()" style="text-transform: none; font-size: 25px;" class="light-blue white--text font-weight-bold" x-large>
           はじめから
         </v-btn>
       </div>
