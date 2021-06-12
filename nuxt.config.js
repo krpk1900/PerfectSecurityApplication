@@ -23,9 +23,9 @@ export default {
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://perfectsecurityapplication.web.app' },
       { hid: 'og:title', property: 'og:title', content: '世界一セキュリティが堅牢なアプリ' },
-      { hid: 'og:description', property: 'og:description', content: '世界一セキュリティが堅牢なアプリです。' },
-      { hid: 'og:image', property: 'og:image', content: '/ogp.jpg' },
-      { name: 'twitter:card', content: 'summary_large_image' },　//twitterの画像サイズ
+      { hid: 'og:description', property: 'og:description', content: '凄腕ハッカーのみ突破することができる、世界一セキュリティが堅牢なアプリです。' },
+      { hid: 'og:image', property: 'og:image', content: 'https://perfectsecurityapplication.web.app/ogp.jpg' },
+      { name: 'twitter:card', content: 'summary' },　//twitterの画像サイズ summary_large_image
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
