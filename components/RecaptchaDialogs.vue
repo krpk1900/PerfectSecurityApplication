@@ -142,7 +142,6 @@ export default {
     isSelected9: false,
     wrongText: '　',
     isShowPolicy: false,
-
   }),
   methods: {
     check () {
