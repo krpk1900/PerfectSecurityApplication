@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg16"
+   version="1.1"
+   style="overflow:visible"
+   viewBox="-240 -126 480 252"
+   height="1008px"
+   width="1920px">
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs20" />
+  <rect
+     id="rect2"
+     fill-opacity="0"
+     fill="rgb(0,0,0)"
+     height="252"
+     width="480"
+     y="-126"
+     x="-240" />
+  <svg
+     id="svg14"
+     version="1.1"
+     y="-250"
+     x="-250"
+     viewBox="-250 -250 500 500"
+     height="500"
+     width="500"
+     style="overflow:visible">
+    <g
+       style="fill:#ffffff;stroke-linejoin:round"
+       id="g12">
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
+         id="path4"
+         d="m -0.0045,-100 c -33.60945,0 -61.0795,27.43875 -61.0795,61.0095 V -3.991 l 26.45835,10e-4 v -34.9995 c 0,-19.38655 15.212,-34.5815 34.62125,-34.5815 19.40855,0 34.62125,15.1949 34.62125,34.5815 V -3.99 L 61.0752,-3.991 V -38.9905 C 61.0752,-72.56145 33.6051,-100 -0.0043,-100 Z" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round"
+         id="path6"
+         d="M -81.9507,-14.2675 H 81.9508 V 100 H -81.9507 Z" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:round"
+         id="path8"
+         d="m -0.004001,9.663999 c -12.8241,-2.5e-5 -23.21925,10.38355 -23.21925,23.193 0.0081,9.147 5.3975,17.4344 13.75985,21.16005 v 26.452 h 18.05965 v -26.07925 c 8.8246,-3.514685 14.61475,-12.0437 14.61895,-21.5329 3.5e-5,-12.80945 -10.3958,-23.193 -23.2192,-23.193 z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
+         id="path10"
+         d="M -81.9507,-14.2675 H 81.9508 V 100 H -81.9507 Z" />
+    </g>
+  </svg>
+</svg>

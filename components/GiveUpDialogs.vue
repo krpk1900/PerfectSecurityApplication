@@ -12,11 +12,11 @@
         あなたは世界一堅牢なセキュリティに破れた<br>
         <br><br>
         <span style="font-size: 100px !important;" class="red--text text--lighten-1">{{this.giveUpCount}}</span>
-        人目の駆け出しハッカーです。
+        人目の負け犬ハッカーです。
       </v-card-text>
 
       <div style="text-align: center;">
-        <img src="unlock.png" width="150px" >
+        <img src="lock.svg" width="250px" >
       </div>
 
       <div style="text-align: center; padding-bottom: 10px;">
@@ -45,7 +45,7 @@ export default {
   }),
   methods: {
     shareMessage () {
-      return `https://twitter.com/share?url=https://perfectsecurityapplication.web.app/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一セキュリティが堅牢なアプリ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【${this.giveUpCount}】人目の凄腕ハッカーです。%0a`
+      return `https://twitter.com/share?url=https://perfectsecurityapplication.web.app/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一セキュリティが堅牢なアプリ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】に破れた【${this.giveUpCount}】人目の負け犬ハッカーです。%0a`
     },
     send () {
       console.log('send()が呼ばれました。')
