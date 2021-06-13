@@ -100,7 +100,7 @@
           <span>このアプリについて</span>
         </v-tooltip>
 
-        <v-btn @click="giveup" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="100px" height="45px">諦める</v-btn>
+        <v-btn @click="giveUp(); writeGiveUpUsers();" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="100px" height="45px">諦める</v-btn>
         <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="150px" height="45px">確認</v-btn>
       </v-card-actions>
     </v-card>
@@ -128,6 +128,8 @@
 </style>
 
 <script>
+import firebase from '@/plugins/firebase'
+let database = firebase.database()
 export default {
   data: () => ({
     isShowDialog: true,
@@ -142,6 +144,7 @@ export default {
     isSelected9: false,
     wrongText: '　',
     isShowPolicy: false,
+    giveUpCount: 0,
   }),
   methods: {
     check () {
@@ -154,10 +157,24 @@ export default {
         this.wrongText = '間違っています。ヒント：左下のアイコン'
       }
     },
-    giveup () {
+    giveUp () {
       this.isShowDialog = false;
-      this.$emit('giveup')
+      this.$emit('giveUp')
     },
+    writeGiveUpUsers () {
+      database.ref("giveUpUsers").push({
+        id: "id",
+      });
+      console.log('ギブアップしたユーザーをデータベースに書き込みました。')
+    },
+    /*readGiveUpUsers () {
+      database.ref("giveUpUsers").once('value', parent => {
+        this.giveUpCount = parent.numChildren();
+        console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
+      });
+      this.$emit('giveUpCount', this.giveUpCount)
+      //console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
+    },*/
   },
   props: {
     targetName: {
