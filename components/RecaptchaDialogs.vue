@@ -167,13 +167,14 @@ export default {
       });
       console.log('ギブアップしたユーザーをデータベースに書き込みました。')
     },
-    readGiveUpUsers () {
+    /*readGiveUpUsers () {
       database.ref("giveUpUsers").once('value', parent => {
         this.giveUpCount = parent.numChildren();
-        this.$emit('giveUpCount', this.giveUpCount)
-        console.log(this.giveUpCount)
+        console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
       });
-    },
+      this.$emit('giveUpCount', this.giveUpCount)
+      //console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
+    },*/
   },
   props: {
     targetName: {

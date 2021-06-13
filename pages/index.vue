@@ -54,13 +54,13 @@
     <RecaptchaDialogs v-if="isShowDialogs9"
     target-name='小峠英二' stage-num='9' image-name1='kotouge1.jpg' image-name2='skinhead1.png' image-name3='kotouge2.png' image-name4='skinhead2.jpg'
     image-name5='kotouge3.jpg' image-name6='skinhead3.jpg' image-name7='kotouge4.jpg' image-name8='skinhead4.jpg' image-name9='kotouge5.png'
-    @success="isShowDialogs10 = true; writeClearUsers(); readClearUsers();" @giveUp="reset(); isGiveUp = true">
+    @success="isShowDialogs10 = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
     <!-- ステージ10 (スキマスイッチとその他のアフロ) -->
     <RecaptchaDialogs v-if="isShowDialogs10"
     target-name='スキマスイッチ' stage-num='10' image-name1='sukima1.jpg' image-name2='afro1.jpg' image-name3='sukima2.jpg' image-name4='afro2.jpg'
     image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png'
-    @success="reset(); isFinished = true;" @giveUp="reset(); isGiveUp = true">
+    @success="reset(); writeClearUsers(); isFinished = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
 
     <!-- 終了ダイアログ -->
@@ -115,7 +115,13 @@ export default {
     readClearUsers () {
       database.ref("clearUsers").once('value', parent => {
         this.clearCount = parent.numChildren()
-        console.log(this.clearCount)
+        console.log(`clearCount=${this.clearCount}`)
+      });
+    },
+    readGiveUpUsers () {
+      database.ref("giveUpUsers").once('value', parent => {
+        this.giveUpCount = parent.numChildren()
+        console.log(`giveUpCount=${this.giveUpCount}`)
       });
     },
     reset () {
@@ -149,6 +155,11 @@ export default {
       this.isGiveUp = false;
     },
   },
+  created: function() {
+    this.readClearUsers();
+    this.readGiveUpUsers();
+    console.log('created');
+  }
 }
 </script>
 
