@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="isShowDialog" width="510" persistent>
+  <v-dialog v-model="isShowDialog" width="600" persistent>
     <template v-slot:activator="{ on, attrs }">
       <a v-bind="attrs" v-on="on" style="color: #099e9e;">　</a>
     </template>
@@ -12,7 +12,7 @@
         あなたは世界一堅牢なセキュリティに破れた<br>
         <br><br>
         <span style="font-size: 100px !important;" class="light-blue--text">{{this.count}}</span>
-        人目の負け犬ハッカーです。
+        人目の駆け出しハッカーです。
       </v-card-text>
 
       <div style="text-align: center;">
