@@ -64,9 +64,9 @@
     </RecaptchaDialogs>
 
     <!-- 終了ダイアログ -->
-    <FinishedDialogs v-if="isFinished" :count="this.count" @restart="receive()"></FinishedDialogs>
+    <FinishedDialogs v-if="isFinished" :clearCount="this.clearCount" @restart="receive()"></FinishedDialogs>
     <!-- ギブアップダイアログ -->
-    <GiveUpDialogs v-if="isGiveUp" @restart="receive()"></GiveUpDialogs>
+    <GiveUpDialogs v-if="isGiveUp" :giveUpCount="this.giveUpCount" @restart="receive()"></GiveUpDialogs>
 
   </div>
 </template>
@@ -85,7 +85,8 @@ export default {
   },
   data () {
     return {
-      count: 0,
+      clearCount: 0,
+      giveUpCount: 0,
       isShowDialogs1: true,//true
       isShowDialogs2: false,
       isShowDialogs3: false,
@@ -113,8 +114,8 @@ export default {
     },
     dataCount () {
       database.ref("users").once('value', parent => {
-        this.count = parent.numChildren()
-        console.log(this.count)
+        this.clearCount = parent.numChildren()
+        console.log(this.clearCount)
       });
     },
     reset () {
