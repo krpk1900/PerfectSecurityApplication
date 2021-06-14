@@ -61,15 +61,6 @@
           <span>更新</span>
         </v-tooltip>
 
-
-        <!--v-tooltip top>
-          <template v-slot:activator="{ on, attrs }">
-            <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-headset</v-icon>
-          </template>
-          <span>諦める場合ロボットとみなします。</span>
-        </v-tooltip-->
-
-
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">
@@ -91,12 +82,6 @@
           <span>このアプリについて</span>
         </v-tooltip>
 
-        <!--v-tooltip top>
-          <template v-slot:activator="{ on, attrs }">
-            <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
-          </template>
-          <span>このアプリについて</span>
-        </v-tooltip-->
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">
