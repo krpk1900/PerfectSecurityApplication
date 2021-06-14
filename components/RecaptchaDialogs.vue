@@ -51,18 +51,46 @@
         </span>
       </v-card-actions>
       <v-card-actions>
+
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
+            <div @click="test()" class="pointer">
+              <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
+            </div>
           </template>
-          <span>ヒント：前問の解答との配置関係</span>
+          <span>更新</span>
         </v-tooltip>
-        <v-tooltip top>
+
+
+        <!--v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-headset</v-icon>
           </template>
           <span>諦める場合ロボットとみなします。</span>
+        </v-tooltip-->
+
+
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <div v-bind="attrs" v-on="on">
+              <v-dialog v-model="isShowMessage" width="600" hide-overlay>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-headset</v-icon>
+                </template>
+                <v-card>
+                  <v-card-title class="headline grey lighten-2 font-weight-black" style="display: block;">このアプリについて
+                    <v-icon style="float: right;" @click="isShowMessage = false">mdi-close</v-icon>
+                  </v-card-title>
+                  <v-card-text style="margin-top: 20px;">
+                    test
+                  </v-card-text>
+                </v-card>
+              </v-dialog>
+            </div>
+          </template>
+          <span>このアプリについて</span>
         </v-tooltip>
+
         <!--v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
@@ -88,9 +116,9 @@
                     この規約に関しての詳細は<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener noreferrer">Googleアナリティクスサービス利用規約</a>や
                     <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Googleポリシーと規約</a>をご覧ください。<br>
                     3.このアプリで使用しているコンテンツは
-                    <a href="https://twitter.com/KYSdane/status/1196084961289261058?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1196084961289261058%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2FKYSdane2Fstatus2F1196084961289261058widget%3DTweet" target="_blank" rel="noopener noreferrer">@KYSdaneさんの投稿</a>・
-                    <a href="https://twitter.com/marugotoaomori/status/1364772606650572802?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1364772606650572802%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2Fmarugotoaomori2Fstatus2F1364772606650572802widget%3DTweet" target="_blank" rel="noopener noreferrer">@marugotoaomoriさんの投稿</a>・
-                    <a href="https://front-row.jp/_ct/17135189" target="_blank" rel="noopener noreferrer">FRONTROWの記事</a>を参考に作成させていただきました。<br>
+                    <a href="https://twitter.com/KYSdane/status/1196084961289261058?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1196084961289261058%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2FKYSdane2Fstatus2F1196084961289261058widget%3DTweet" target="_blank" rel="noopener noreferrer">@KYSdane様の投稿</a>・
+                    <a href="https://twitter.com/marugotoaomori/status/1364772606650572802?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1364772606650572802%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2Fmarugotoaomori2Fstatus2F1364772606650572802widget%3DTweet" target="_blank" rel="noopener noreferrer">@marugotoaomori様の投稿</a>・
+                    <a href="https://front-row.jp/_ct/17135189" target="_blank" rel="noopener noreferrer">FRONTROW様の記事</a>を参考に作成させていただきました。<br>
                     4.何かお気づきの点がございましたら、<a href="https://twitter.com/krpk1900_dev" target="_blank" rel="noopener noreferrer">@krpk1900_dev</a>までご連絡ください。
                   </v-card-text>
                 </v-card>
@@ -125,6 +153,9 @@
     background-color: royalblue;
     cursor: pointer;
   }
+  .pointer {
+    cursor: pointer;
+  }
 </style>
 
 <script>
@@ -144,9 +175,13 @@ export default {
     isSelected9: false,
     wrongText: '　',
     isShowPolicy: false,
+    isShowMessage: false,
     giveUpCount: 0,
   }),
   methods: {
+    test () {
+      console.log('test');
+    },
     check () {
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
           && !this.isSelected6 && this.isSelected7 && !this.isSelected8 && this.isSelected9) {
