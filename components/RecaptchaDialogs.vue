@@ -11,7 +11,7 @@
       <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
-        <span v-if="isShowError" style="color: #dc3545 !important;" class="font-weight-bold">
+        <span v-if="isShowError" class="font-weight-bold red--text text--darken-4">
           間違っています。
           どうしても分からない場合は左下の更新ボタンを押してください。
         </span>
@@ -20,42 +20,42 @@
 
       <v-card-actions style="margin-top: 5px;">
         <span class="picture-area">
-          <img :src="imageName1" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
+          <img :src="showImageName1" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
         <span class="picture-area">
-          <img :src="imageName2" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
+          <img :src="showImageName2" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
         </span>
         <span class="picture-area">
-          <img :src="imageName3" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
-        </span>
-      </v-card-actions>
-      <v-card-actions>
-        <span class="picture-area">
-          <img :src="imageName4" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
-        </span>
-        <span class="picture-area">
-          <img :src="imageName5" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
-        </span>
-        <span class="picture-area">
-          <img :src="imageName6" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+          <img :src="showImageName3" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
         </span>
       </v-card-actions>
       <v-card-actions>
         <span class="picture-area">
-          <img :src="imageName7" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+          <img :src="showImageName4" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
         </span>
         <span class="picture-area">
-          <img :src="imageName8" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+          <img :src="showImageName5" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
         </span>
         <span class="picture-area">
-          <img :src="imageName9" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
+          <img :src="showImageName6" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+        </span>
+      </v-card-actions>
+      <v-card-actions>
+        <span class="picture-area">
+          <img :src="showImageName7" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+        </span>
+        <span class="picture-area">
+          <img :src="showImageName8" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+        </span>
+        <span class="picture-area">
+          <img :src="showImageName9" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
         </span>
       </v-card-actions>
       <v-card-actions>
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <div @click="test()" class="pointer">
+            <div @click="test(); shuffleImages();" class="pointer">
               <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
             </div>
           </template>
@@ -163,6 +163,18 @@ export default {
     isShowMessage: false,
     isShowError: false,
     giveUpCount: 0,
+    showImageName1: '',
+    showImageName2: '',
+    showImageName3: '',
+    showImageName4: '',
+    showImageName5: '',
+    showImageName6: '',
+    showImageName7: '',
+    showImageName8: '',
+    showImageName9: '',
+    showImageName10: '',
+    showImageName11: '',
+    showImageName12: '',
   }),
   methods: {
     test () {
@@ -188,6 +200,22 @@ export default {
       });
       console.log('ギブアップしたユーザーをデータベースに書き込みました。')
     },
+    shuffleArray (arr) {
+      for(var i =arr.length-1 ; i>0 ;i--){
+        var j = Math.floor( Math.random() * (i + 1) ); //random index
+        [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
+      }
+    },
+    shuffleImages () {
+      let imageNames = [this.imageName1, this.imageName3, this.imageName5, this.imageName7, this.imageName9];
+      this.shuffleArray(imageNames);
+
+      this.showImageName1 = imageNames[0];
+      this.showImageName3 = imageNames[1];
+      this.showImageName5 = imageNames[2];
+      this.showImageName7 = imageNames[3];
+      this.showImageName9 = imageNames[4];
+    },
     /*readGiveUpUsers () {
       database.ref("giveUpUsers").once('value', parent => {
         this.giveUpCount = parent.numChildren();
@@ -196,6 +224,20 @@ export default {
       this.$emit('giveUpCount', this.giveUpCount)
       //console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
     },*/
+  },
+  created: function () {
+    this.showImageName1 = this.imageName1;
+    this.showImageName2 = this.imageName2;
+    this.showImageName3 = this.imageName3;
+    this.showImageName4 = this.imageName4;
+    this.showImageName5 = this.imageName5;
+    this.showImageName6 = this.imageName6;
+    this.showImageName7 = this.imageName7;
+    this.showImageName8 = this.imageName8;
+    this.showImageName9 = this.imageName9;
+    this.showImageName10 = this.imageName10;
+    this.showImageName11 = this.imageName11;
+    this.showImageName12 = this.imageName12;
   },
   props: {
     targetName: {
