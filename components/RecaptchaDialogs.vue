@@ -13,7 +13,7 @@
         すべて選択し終わったら[確認]をクリックしてください。<br>
         <span v-if="isShowError" class="font-weight-bold red--text text--darken-4">
           間違っています。
-          どうしても分からない場合は左下の更新ボタンを押してください。
+          分からない場合は左下の更新ボタンを押してください。
         </span>
       </v-card-subtitle>
       </div>
@@ -55,7 +55,7 @@
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <div @click="test(); shuffleImages();" class="pointer">
+            <div @click="shuffleImages();" class="pointer">
               <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
             </div>
           </template>
@@ -202,28 +202,32 @@ export default {
     },
     shuffleArray (arr) {
       for(var i =arr.length-1 ; i>0 ;i--){
-        var j = Math.floor( Math.random() * (i + 1) ); //random index
-        [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
+        var j = Math.floor( Math.random() * (i + 1) );
+        [arr[i],arr[j]]=[arr[j],arr[i]];
       }
     },
     shuffleImages () {
+      let vueInstance = this
+      let timeConuter = 0
       let imageNames = [this.imageName1, this.imageName3, this.imageName5, this.imageName7, this.imageName9];
-      this.shuffleArray(imageNames);
+      let setImages = function(){
+        vueInstance.shuffleArray(imageNames);
+        vueInstance.showImageName1 = imageNames[0];
+        vueInstance.showImageName3 = imageNames[1];
+        vueInstance.showImageName5 = imageNames[2];
+        vueInstance.showImageName7 = imageNames[3];
+        vueInstance.showImageName9 = imageNames[4];
+        timeConuter += 1;
+        console.log('繰り返し')
+      }
+      let intervalId = setInterval( ()=> {
+        setImages();
+        if(timeConuter > 5){
+          clearInterval(intervalId);
+        }
+      }, 100);
 
-      this.showImageName1 = imageNames[0];
-      this.showImageName3 = imageNames[1];
-      this.showImageName5 = imageNames[2];
-      this.showImageName7 = imageNames[3];
-      this.showImageName9 = imageNames[4];
     },
-    /*readGiveUpUsers () {
-      database.ref("giveUpUsers").once('value', parent => {
-        this.giveUpCount = parent.numChildren();
-        console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
-      });
-      this.$emit('giveUpCount', this.giveUpCount)
-      //console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
-    },*/
   },
   created: function () {
     this.showImageName1 = this.imageName1;
