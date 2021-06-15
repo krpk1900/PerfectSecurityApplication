@@ -11,8 +11,9 @@
       <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
-        <span style="color: #dc3545 !important;" class="font-weight-bold">
-          {{ wrongText }}
+        <span v-if="isShowError" style="color: #dc3545 !important;" class="font-weight-bold">
+          間違っています。
+          どうしても分からない場合は左下の更新ボタンを押してください。
         </span>
       </v-card-subtitle>
       </div>
@@ -158,9 +159,9 @@ export default {
     isSelected7: false,
     isSelected8: false,
     isSelected9: false,
-    wrongText: '　',
     isShowPolicy: false,
     isShowMessage: false,
+    isShowError: false,
     giveUpCount: 0,
   }),
   methods: {
@@ -170,11 +171,11 @@ export default {
     check () {
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
           && !this.isSelected6 && this.isSelected7 && !this.isSelected8 && this.isSelected9) {
-        this.wrongText = '　';
+        this.isShowError = false;
         this.isShowDialog = false;
         this.$emit('success')
       } else {
-        this.wrongText = '間違っています。ヒント：左下のアイコン'
+        this.isShowError = true;
       }
     },
     giveUp () {
