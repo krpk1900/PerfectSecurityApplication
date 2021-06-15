@@ -11,7 +11,7 @@
       <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
-        <span v-if="isShowError" style="color: #dc3545 !important;" class="font-weight-bold">
+        <span v-if="isShowError" class="font-weight-bold red--text text--darken-4">
           間違っています。
           どうしても分からない場合は左下の更新ボタンを押してください。
         </span>
