@@ -16,7 +16,7 @@
       </v-card-text>
 
       <div style="text-align: center;">
-        <img src="lock.svg" width="250px" >
+        <img src="lock.png" width="250px" >
       </div>
 
       <div style="text-align: center; padding-bottom: 10px;">
