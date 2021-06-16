@@ -64,6 +64,15 @@
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
+            <div @click="playMusic();" class="pointer">
+              <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-headset</v-icon>
+            </div>
+          </template>
+          <span>音が鳴ります</span>
+        </v-tooltip>
+
+        <!--v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">
               <v-dialog v-model="isShowMessage" width="600" hide-overlay>
                 <template v-slot:activator="{ on, attrs }">
@@ -81,7 +90,7 @@
             </div>
           </template>
           <span>このアプリについて</span>
-        </v-tooltip>
+        </v-tooltip-->
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
@@ -226,7 +235,10 @@ export default {
           clearInterval(intervalId);
         }
       }, 100);
-
+    },
+    playMusic () {
+      let music = new Audio('sound.mp3');
+      music.play();
     },
   },
   created: function () {
