@@ -237,8 +237,9 @@ export default {
       }, 100);
     },
     playMusic () {
-      let music = new Audio('sound.mp3');
-      music.play();
+      let soundFileName = 'sound1.mp3'
+      let sound = new Audio(soundFileName);
+      sound.play();
     },
   },
   created: function () {
