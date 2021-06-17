@@ -130,10 +130,11 @@
   </v-dialog>
 </template>
 
-<style>
+<style scoped>
   @media screen and (max-width: 480px) {
     .target-name {
       display: inline-block !important;
+      font-size: 30px !important;
       width: 240px;
     }
     .images {

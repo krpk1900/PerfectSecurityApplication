@@ -98,7 +98,7 @@ export default {
       isShowDialogs9: false,
       isShowDialogs10: false,
       isFinished: false,
-      isGiveUp: false,
+      isGiveUp: true,
     }
   },
   methods: {
