@@ -97,7 +97,7 @@ export default {
       isShowDialogs8: false,
       isShowDialogs9: false,
       isShowDialogs10: false,
-      isFinished: false,
+      isFinished: true,
       isGiveUp: false,
     }
   },

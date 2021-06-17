@@ -5,14 +5,14 @@
     </template>
     <v-card>
 
-      <v-card-text class="light-blue font-weight-black white--text" align="center" style="padding-top: 20px; font-size: 27px;">
-        セキュリティの突破に成功しました
+      <v-card-text class="light-blue font-weight-black white--text card-title" align="center">
+        セキュリティの突破に<br class="br-sp">成功しました
       </v-card-text>
       <v-card-text class="text-body-1 font-weight-black" style="padding-top: 20px; font-size: 20px !important;" align="center">
-        あなたは世界一堅牢なセキュリティを突破した<br>
+        あなたは世界一堅牢な<br class="br-sp">セキュリティを突破した<br>
         <br><br>
         <span style="font-size: 100px !important;" class="light-blue--text">{{this.clearCount}}</span>
-        人目の凄腕ハッカーです。
+        人目の<br class="br-sp">凄腕ハッカーです。
       </v-card-text>
 
       <div style="text-align: center;">
@@ -36,6 +36,22 @@
 </template>
 
 <style>
+@media screen and (max-width: 480px) {
+  .card-title {
+    padding-top: 20px !important;
+    font-size: 27px;
+    line-height: 35px
+  }
+}
+@media screen and (min-width: 481px) {
+  .card-title {
+    padding-top: 20px !important;
+    font-size: 30px;
+  }
+  .br-sp {
+    display: none;
+  }
+}
 </style>
 
 <script>
