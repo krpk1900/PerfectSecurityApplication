@@ -187,6 +187,10 @@
     }
   }
 
+  /* vuetify上書き */
+  .v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 95%;
+  }
   .stage-num {
     display: inline-block;
     width: 80px;
