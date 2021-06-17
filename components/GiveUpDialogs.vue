@@ -5,14 +5,14 @@
     </template>
     <v-card>
 
-      <v-card-text class="red lighten-1 font-weight-black white--text" align="center" style="padding-top: 20px; font-size: 27px;">
-        セキュリティの突破に失敗しました
+      <v-card-text class="red lighten-1 font-weight-black white--text card-title" align="center">
+        セキュリティの突破に<br class="br-sp">失敗しました
       </v-card-text>
       <v-card-text class="text-body-1 font-weight-black" style="padding-top: 20px; font-size: 20px !important;" align="center">
-        あなたは世界一堅牢なセキュリティに破れた<br>
+        あなたは世界一堅牢な<br class="br-sp">セキュリティに破れた<br>
         <br><br>
         <span style="font-size: 100px !important;" class="red--text text--lighten-1">{{this.giveUpCount}}</span>
-        人目の負け犬ハッカーです。
+        人目の<br class="br-sp">負け犬ハッカーです。
       </v-card-text>
 
       <div style="text-align: center;">
@@ -20,13 +20,13 @@
       </div>
 
       <div style="text-align: center; padding-bottom: 10px;">
-        <v-btn :href="shareMessage()" target="_blank" style="text-transform: none; font-size: 25px;" class="red lighten-1 white--text font-weight-bold" x-large>
+        <v-btn :href="shareMessage()" target="_blank" class="red lighten-1 white--text font-weight-bold btn" x-large>
           <v-icon style="font-size: 35px; margin-right: 5px;">mdi-twitter</v-icon>Twitterでシェアする
         </v-btn>
       </div>
 
       <div style="text-align: center; padding-bottom: 10px;">
-        <v-btn @click="send()" style="text-transform: none; font-size: 25px;" class="red lighten-1 white--text font-weight-bold" x-large>
+        <v-btn @click="send()" class="red lighten-1 white--text font-weight-bold btn" x-large>
           はじめから
         </v-btn>
       </div>
@@ -36,6 +36,32 @@
 </template>
 
 <style scoped>
+@media screen and (max-width: 480px) {
+  .card-title {
+    padding-top: 20px !important;
+    font-size: 27px;
+    line-height: 35px;
+  }
+  .btn {
+    text-transform: none !important;
+    font-size: 22px !important;
+    width: 300px;
+  }
+}
+@media screen and (min-width: 481px) {
+  .card-title {
+    padding-top: 20px !important;
+    font-size: 30px;
+  }
+  .br-sp {
+    display: none;
+  }
+  .btn {
+    text-transform: none !important;
+    font-size: 25px !important;
+    width: 360px;
+  }
+}
 </style>
 
 <script>
