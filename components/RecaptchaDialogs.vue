@@ -6,8 +6,8 @@
     <v-card>
       <div class="light-blue white--text">
 
-      <v-card-title class="text-h3 font-weight-black" style="width: 410px; display: inline-block;">{{ targetName }}</v-card-title>
-      <span class="font-weight-black text-h6" style="display: inline-block; width: 80px; vertical-align: top; margin-top: 10px;">({{ stageNum }}/10)</span>
+      <v-card-title class="text-h5 text-sm-h3 font-weight-black target-name">{{ targetName }}</v-card-title>
+      <span class="text-h6 font-weight-black stage-num">({{ stageNum }}/10)</span>
       <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
@@ -20,35 +20,35 @@
 
       <v-card-actions style="margin-top: 5px;">
         <span class="picture-area">
-          <img :src="showImageName1" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
+          <img :src="showImageName1" class="images" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName2" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
+          <img :src="showImageName2" class="images" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName3" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
-        </span>
-      </v-card-actions>
-      <v-card-actions>
-        <span class="picture-area">
-          <img :src="showImageName4" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
-        </span>
-        <span class="picture-area">
-          <img :src="showImageName5" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
-        </span>
-        <span class="picture-area">
-          <img :src="showImageName6" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+          <img :src="showImageName3" class="images" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
         </span>
       </v-card-actions>
       <v-card-actions>
         <span class="picture-area">
-          <img :src="showImageName7" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+          <img :src="showImageName4" class="images" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName8" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+          <img :src="showImageName5" class="images" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName9" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
+          <img :src="showImageName6" class="images" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+        </span>
+      </v-card-actions>
+      <v-card-actions>
+        <span class="picture-area">
+          <img :src="showImageName7" class="images" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+        </span>
+        <span class="picture-area">
+          <img :src="showImageName8" class="images" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+        </span>
+        <span class="picture-area">
+          <img :src="showImageName9" class="images" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
         </span>
       </v-card-actions>
       <v-card-actions>
@@ -56,7 +56,7 @@
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div @click="shuffleImages();" class="pointer">
-              <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
+              <v-icon v-bind="attrs" v-on="on" class="icon">mdi-refresh</v-icon>
             </div>
           </template>
           <span>更新</span>
@@ -65,7 +65,7 @@
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div @click="playMusic();" class="pointer">
-              <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-headset</v-icon>
+              <v-icon v-bind="attrs" v-on="on" class="icon">mdi-headset</v-icon>
             </div>
           </template>
           <span>音が鳴ります</span>
@@ -97,7 +97,7 @@
             <div v-bind="attrs" v-on="on">
               <v-dialog v-model="isShowPolicy" width="600" hide-overlay>
                 <template v-slot:activator="{ on, attrs }">
-                  <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
+                  <v-icon v-bind="attrs" v-on="on" class="icon">mdi-information-outline</v-icon>
                 </template>
                 <v-card>
                   <v-card-title class="headline grey lighten-2 font-weight-black" style="display: block;">このアプリについて
@@ -123,30 +123,82 @@
           <span>このアプリについて</span>
         </v-tooltip>
 
-        <v-btn @click="giveUp(); writeGiveUpUsers();" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="100px" height="45px">諦める</v-btn>
-        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="150px" height="45px">確認</v-btn>
+        <v-btn @click="giveUp(); writeGiveUpUsers();" class="light-blue text-body-1 font-weight-bold white--text btn" tile>諦める</v-btn>
+        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn btn-confirm" tile>確認</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <style>
-  .icon {
-    margin: 0 10px;
+  @media screen and (max-width: 480px) {
+    .target-name {
+      display: inline-block !important;
+      width: 240px;
+    }
+    .images {
+      width: 90px;
+    }
+    .picture-area {
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      margin: -5px 5px;
+      background-color: royalblue;
+      cursor: pointer;
+    }
+    .icon {
+      margin: 0 3px;
+      font-size: 2.5rem !important;
+    }
+    .btn {
+      margin: 0 0 0 auto;
+      width: 70px;
+      height: 45px !important;
+    }
   }
-  .btn {
-    margin: 0 0 0 auto;
+  @media screen and (min-width: 481px) {
+    .target-name {
+      display: inline-block !important;
+      width: 410px;
+    }
+    .images {
+      width: 150px;
+    }
+    .picture-area {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      margin: -5px 5px;
+      background-color: royalblue;
+      cursor: pointer;
+    }
+    .icon {
+      margin: 0 8px;
+      font-size: 3rem !important;
+    }
+    .btn {
+      margin: 0 0 0 auto;
+      width: 100px;
+      height: 45px !important;
+    }
+    .btn-confirm {
+      width: 150px !important;
+    }
+  }
+
+  /* vuetify上書き */
+  .v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 95% !important;
+  }
+  .stage-num {
+    display: inline-block;
+    width: 80px;
+    vertical-align: top;
+    margin-top: 10px;
   }
   .selected {
     opacity: 0.7;
-  }
-  .picture-area {
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin: -5px 5px;
-    background-color: royalblue;
-    cursor: pointer;
   }
   .pointer {
     cursor: pointer;
