@@ -133,7 +133,7 @@
 <style>
   @media screen and (max-width: 480px) {
     .target-name {
-      display: inline-block;
+      display: inline-block !important;
       width: 240px;
     }
     .images {
@@ -159,7 +159,7 @@
   }
   @media screen and (min-width: 481px) {
     .target-name {
-      display: inline-block;
+      display: inline-block !important;
       width: 410px;
     }
     .images {
