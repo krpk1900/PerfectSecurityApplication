@@ -56,7 +56,7 @@
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div @click="shuffleImages();" class="pointer">
-              <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
+              <v-icon v-bind="attrs" v-on="on" class="icon">mdi-refresh</v-icon>
             </div>
           </template>
           <span>更新</span>
@@ -65,7 +65,7 @@
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div @click="playMusic();" class="pointer">
-              <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-headset</v-icon>
+              <v-icon v-bind="attrs" v-on="on" class="icon">mdi-headset</v-icon>
             </div>
           </template>
           <span>音が鳴ります</span>
@@ -97,7 +97,7 @@
             <div v-bind="attrs" v-on="on">
               <v-dialog v-model="isShowPolicy" width="600" hide-overlay>
                 <template v-slot:activator="{ on, attrs }">
-                  <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
+                  <v-icon v-bind="attrs" v-on="on" class="icon">mdi-information-outline</v-icon>
                 </template>
                 <v-card>
                   <v-card-title class="headline grey lighten-2 font-weight-black" style="display: block;">このアプリについて
@@ -147,6 +147,10 @@
       background-color: royalblue;
       cursor: pointer;
     }
+    .icon {
+      margin: 0 3px;
+      font-size: 2.5rem !important;
+    }
   }
   @media screen and (min-width: 481px) {
     .target-name {
@@ -164,6 +168,10 @@
       background-color: royalblue;
       cursor: pointer;
     }
+    .icon {
+      margin: 0 10px;
+      font-size: 3rem !important;
+    }
   }
   .stage-num {
     display: inline-block;
@@ -171,9 +179,7 @@
     vertical-align: top;
     margin-top: 10px;
   }
-  .icon {
-    margin: 0 10px;
-  }
+
   .btn {
     margin: 0 0 0 auto;
   }
