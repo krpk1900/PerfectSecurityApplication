@@ -237,8 +237,13 @@ export default {
       }, 100);
     },
     playMusic () {
-      let music = new Audio('sound.mp3');
-      music.play();
+      let soundFileNames = ['sound1.mp3', 'sound2.mp3', 'sound3.mp3', 'sound4.mp3', 'sound5.mp3', 'sound6.mp3', 'sound7.mp3', 'sound8.mp3',
+                            'sound9.mp3', 'sound10.mp3', 'sound11.mp3', 'sound12.mp3', 'sound13.mp3', 'sound14.mp3', 'sound15.mp3', 'sound16.mp3'
+                            ]
+      this.shuffleArray(soundFileNames)
+      let soundFileName = soundFileNames[0]
+      let sound = new Audio(soundFileName);
+      sound.play();
     },
   },
   created: function () {
