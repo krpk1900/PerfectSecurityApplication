@@ -123,8 +123,8 @@
           <span>このアプリについて</span>
         </v-tooltip>
 
-        <v-btn @click="giveUp(); writeGiveUpUsers();" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="100px" height="45px">諦める</v-btn>
-        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="150px" height="45px">確認</v-btn>
+        <v-btn @click="giveUp(); writeGiveUpUsers();" class="light-blue text-body-1 font-weight-bold white--text btn" tile>諦める</v-btn>
+        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn btn-confirm" tile>確認</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -151,6 +151,11 @@
       margin: 0 3px;
       font-size: 2.5rem !important;
     }
+    .btn {
+      margin: 0 0 0 auto;
+      width: 70px;
+      height: 45px !important;
+    }
   }
   @media screen and (min-width: 481px) {
     .target-name {
@@ -169,19 +174,24 @@
       cursor: pointer;
     }
     .icon {
-      margin: 0 10px;
+      margin: 0 8px;
       font-size: 3rem !important;
     }
+    .btn {
+      margin: 0 0 0 auto;
+      width: 100px;
+      height: 45px !important;
+    }
+    .btn-confirm {
+      width: 150px !important;
+    }
   }
+
   .stage-num {
     display: inline-block;
     width: 80px;
     vertical-align: top;
     margin-top: 10px;
-  }
-
-  .btn {
-    margin: 0 0 0 auto;
   }
   .selected {
     opacity: 0.7;
