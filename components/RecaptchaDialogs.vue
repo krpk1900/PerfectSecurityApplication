@@ -130,7 +130,7 @@
   </v-dialog>
 </template>
 
-<style>
+<style scoped>
   @media screen and (max-width: 480px) {
     .target-name {
       display: inline-block !important;

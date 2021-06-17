@@ -35,7 +35,7 @@
   </v-dialog>
 </template>
 
-<style>
+<style scoped>
 @media screen and (max-width: 480px) {
   .card-title {
     padding-top: 20px !important;

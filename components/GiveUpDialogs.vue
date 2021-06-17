@@ -35,7 +35,7 @@
   </v-dialog>
 </template>
 
-<style>
+<style scoped>
 </style>
 
 <script>
