@@ -20,35 +20,35 @@
 
       <v-card-actions style="margin-top: 5px;">
         <span class="picture-area">
-          <img :src="showImageName1" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
+          <img :src="showImageName1" class="images" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName2" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
+          <img :src="showImageName2" class="images" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName3" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
-        </span>
-      </v-card-actions>
-      <v-card-actions>
-        <span class="picture-area">
-          <img :src="showImageName4" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
-        </span>
-        <span class="picture-area">
-          <img :src="showImageName5" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
-        </span>
-        <span class="picture-area">
-          <img :src="showImageName6" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+          <img :src="showImageName3" class="images" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
         </span>
       </v-card-actions>
       <v-card-actions>
         <span class="picture-area">
-          <img :src="showImageName7" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+          <img :src="showImageName4" class="images" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName8" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+          <img :src="showImageName5" class="images" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
         </span>
         <span class="picture-area">
-          <img :src="showImageName9" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
+          <img :src="showImageName6" class="images" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+        </span>
+      </v-card-actions>
+      <v-card-actions>
+        <span class="picture-area">
+          <img :src="showImageName7" class="images" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+        </span>
+        <span class="picture-area">
+          <img :src="showImageName8" class="images" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+        </span>
+        <span class="picture-area">
+          <img :src="showImageName9" class="images" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
         </span>
       </v-card-actions>
       <v-card-actions>
@@ -136,11 +136,16 @@
       display: inline-block;
       width: 240px;
     }
-    .stage-num {
+    .images {
+      width: 90px;
+    }
+    .picture-area {
       display: inline-block;
-      width: 80px;
-      vertical-align: top;
-      margin-top: 10px;
+      width: 90px;
+      height: 90px;
+      margin: -5px 5px;
+      background-color: royalblue;
+      cursor: pointer;
     }
   }
   @media screen and (min-width: 481px) {
@@ -148,12 +153,23 @@
       display: inline-block;
       width: 410px;
     }
-    .stage-num {
-      display: inline-block;
-      width: 80px;
-      vertical-align: top;
-      margin-top: 10px;
+    .images {
+      width: 150px;
     }
+    .picture-area {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      margin: -5px 5px;
+      background-color: royalblue;
+      cursor: pointer;
+    }
+  }
+  .stage-num {
+    display: inline-block;
+    width: 80px;
+    vertical-align: top;
+    margin-top: 10px;
   }
   .icon {
     margin: 0 10px;
@@ -163,14 +179,6 @@
   }
   .selected {
     opacity: 0.7;
-  }
-  .picture-area {
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin: -5px 5px;
-    background-color: royalblue;
-    cursor: pointer;
   }
   .pointer {
     cursor: pointer;
