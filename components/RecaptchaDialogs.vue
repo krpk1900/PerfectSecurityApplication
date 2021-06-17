@@ -189,7 +189,7 @@
 
   /* vuetify上書き */
   .v-dialog:not(.v-dialog--fullscreen) {
-    max-height: 95%;
+    max-height: 95% !important;
   }
   .stage-num {
     display: inline-block;
