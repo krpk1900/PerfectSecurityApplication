@@ -6,8 +6,8 @@
     <v-card>
       <div class="light-blue white--text">
 
-      <v-card-title class="text-h3 font-weight-black" style="width: 410px; display: inline-block;">{{ targetName }}</v-card-title>
-      <span class="font-weight-black text-h6" style="display: inline-block; width: 80px; vertical-align: top; margin-top: 10px;">({{ stageNum }}/10)</span>
+      <v-card-title class="text-h5 text-sm-h3 font-weight-black target-name">{{ targetName }}</v-card-title>
+      <span class="text-h6 font-weight-black stage-num">({{ stageNum }}/10)</span>
       <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
@@ -131,6 +131,30 @@
 </template>
 
 <style>
+  @media screen and (max-width: 480px) {
+    .target-name {
+      display: inline-block;
+      width: 240px;
+    }
+    .stage-num {
+      display: inline-block;
+      width: 80px;
+      vertical-align: top;
+      margin-top: 10px;
+    }
+  }
+  @media screen and (min-width: 481px) {
+    .target-name {
+      display: inline-block;
+      width: 410px;
+    }
+    .stage-num {
+      display: inline-block;
+      width: 80px;
+      vertical-align: top;
+      margin-top: 10px;
+    }
+  }
   .icon {
     margin: 0 10px;
   }
