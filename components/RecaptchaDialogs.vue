@@ -135,11 +135,11 @@
     .target-name {
       display: inline-block !important;
       font-size: 30px !important;
-      width: 240px;
+      width: 245px;
     }
     .images {
       width: 90px;
-      transition: all 0.3s ease;
+      transition: all 0.15s ease;
     }
     .picture-area {
       display: inline-block;
@@ -171,7 +171,7 @@
     }
     .images {
       width: 150px;
-      transition: all 0.3s ease;
+      transition: all 0.15s ease;
     }
     .picture-area {
       display: inline-block;
@@ -206,7 +206,7 @@
   }
   .stage-num {
     display: inline-block;
-    width: 80px;
+    width: 70px;
     vertical-align: top;
     margin-top: 10px;
   }
