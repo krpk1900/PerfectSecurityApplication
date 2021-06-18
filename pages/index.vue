@@ -38,28 +38,28 @@
     image-name5='mop3.jpg' image-name6='sheepdog3.jpg' image-name7='mop4.jpg' image-name8='sheepdog4.jpg' image-name9='mop5.jpg'
     @success="isShowDialogs7 = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
-    <!-- ステージ7 (ふじとその他のりんご) -->
+    <!-- ステージ7 (あまおうとその他のいちご) -->
     <RecaptchaDialogs v-if="isShowDialogs7"
-    target-name='ふじ' stage-num='7' image-name1='fuji1.jpg' image-name2='apple1.jpg' image-name3='fuji2.jpg' image-name4='apple2.jpg'
-    image-name5='fuji3.jpg' image-name6='apple3.jpg' image-name7='fuji4.jpg' image-name8='apple4.jpg' image-name9='fuji5.jpg'
+    target-name='あまおう' stage-num='7' image-name1='amaou1.jpg' image-name2='strawberry1.jpg' image-name3='amaou2.jpg' image-name4='strawberry2.jpg'
+    image-name5='amaou3.jpg' image-name6='strawberry3.jpg' image-name7='amaou4.jpg' image-name8='strawberry4.jpg' image-name9='amaou5.jpg'
     @success="isShowDialogs8 = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
-    <!-- ステージ8 (あまおうとその他のいちご) -->
+    <!-- ステージ8 (小峠英二とその他のスキンヘッド) -->
     <RecaptchaDialogs v-if="isShowDialogs8"
-    target-name='あまおう' stage-num='8' image-name1='amaou1.jpg' image-name2='strawberry1.jpg' image-name3='amaou2.jpg' image-name4='strawberry2.jpg'
-    image-name5='amaou3.jpg' image-name6='strawberry3.jpg' image-name7='amaou4.jpg' image-name8='strawberry4.jpg' image-name9='amaou5.jpg'
+    target-name='小峠英二' stage-num='8' image-name1='kotouge1.jpg' image-name2='skinhead1.png' image-name3='kotouge2.png' image-name4='skinhead2.jpg'
+    image-name5='kotouge3.jpg' image-name6='skinhead3.jpg' image-name7='kotouge4.jpg' image-name8='skinhead4.jpg' image-name9='kotouge5.png'
     @success="isShowDialogs9 = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
-    <!-- ステージ9 (小峠英二とその他のスキンヘッド) -->
+    <!-- ステージ9 (スキマスイッチとその他のアフロ) -->
     <RecaptchaDialogs v-if="isShowDialogs9"
-    target-name='小峠英二' stage-num='9' image-name1='kotouge1.jpg' image-name2='skinhead1.png' image-name3='kotouge2.png' image-name4='skinhead2.jpg'
-    image-name5='kotouge3.jpg' image-name6='skinhead3.jpg' image-name7='kotouge4.jpg' image-name8='skinhead4.jpg' image-name9='kotouge5.png'
-    @success="isShowDialogs10 = true;" @giveUp="reset(); isGiveUp = true">
-    </RecaptchaDialogs>
-    <!-- ステージ10 (スキマスイッチとその他のアフロ) -->
-    <RecaptchaDialogs v-if="isShowDialogs10"
-    target-name='スキマスイッチ' stage-num='10' image-name1='sukima1.jpg' image-name2='afro1.jpg' image-name3='sukima2.jpg' image-name4='afro2.jpg'
+    target-name='スキマスイッチ' stage-num='9' image-name1='sukima1.jpg' image-name2='afro1.jpg' image-name3='sukima2.jpg' image-name4='afro2.jpg'
     image-name5='sukima3.jpg' image-name6='afro3.jpg' image-name7='sukima4.jpg' image-name8='afro4.jpg' image-name9='sukima5.png'
+    @success="isShowDialogs10 = true;"  @giveUp="reset(); isGiveUp = true">
+    </RecaptchaDialogs>
+    <!-- ステージ10 (ふじとその他のりんご) -->
+    <RecaptchaDialogs v-if="isShowDialogs10"
+    target-name='ふじ' stage-num='10' image-name1='fuji1.jpg' image-name2='apple1.jpg' image-name3='fuji2.jpg' image-name4='apple2.jpg'
+    image-name5='fuji3.jpg' image-name6='apple3.jpg' image-name7='fuji4.jpg' image-name8='apple4.jpg' image-name9='fuji5.jpg'
     @success="reset(); writeClearUsers(); isFinished = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
 
@@ -158,8 +158,10 @@ export default {
   created: function() {
     this.readClearUsers();
     this.readGiveUpUsers();
-    console.log('ディベロッパーツールを使うとは中々腕の立つハッカーですね…');
-    console.log('ガチな攻撃はお控えください( ´:ω:` ) ');
+    console.log('------------------');
+    console.log('ディベロッパーツールを使うとは中々腕の立つハッカーですね！');
+    console.log('ガチな攻撃は控えていただけると助かります...( ´:ω:` ) ');
+    console.log('------------------');
   }
 }
 </script>
