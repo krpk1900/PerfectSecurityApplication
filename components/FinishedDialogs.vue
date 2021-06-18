@@ -12,7 +12,7 @@
         あなたは世界一堅牢な<br class="br-sp">セキュリティを突破した<br>
         <br><br>
         <span style="font-size: 100px !important;" class="light-blue--text">{{this.clearCount}}</span>
-        人目の<br class="br-sp">凄腕ハッカーです。
+        人目の<br class="br-sp">凄腕ハッカーです！
       </v-card-text>
 
       <div style="text-align: center;">
@@ -71,7 +71,7 @@ export default {
   }),
   methods: {
     shareMessage () {
-      return `https://twitter.com/share?url=https://perfectsecurityapplication.web.app/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一セキュリティが堅牢なアプリ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【${this.clearCount}】人目の凄腕ハッカーです。%0a`
+      return `https://twitter.com/share?url=https://perfectsecurityapplication.web.app/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一セキュリティが堅牢なアプリ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【${this.clearCount}】人目の凄腕ハッカーです！%0a`
     },
     send () {
       console.log('send()が呼ばれました。')

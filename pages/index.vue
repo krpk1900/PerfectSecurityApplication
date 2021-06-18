@@ -158,7 +158,8 @@ export default {
   created: function() {
     this.readClearUsers();
     this.readGiveUpUsers();
-    console.log('created');
+    console.log('ディベロッパーツールを使うとは中々腕の立つハッカーですね…');
+    console.log('ガチな攻撃はお控えください( ´:ω:` ) ');
   }
 }
 </script>
