@@ -149,6 +149,11 @@
       background-color: #198cff;
       cursor: pointer;
     }
+    .selected {
+      opacity: 0.8;
+      width: 80px !important;
+      margin: 5px;
+    }
     .icon {
       margin: 0 3px;
       font-size: 2.5rem !important;
@@ -176,6 +181,11 @@
       background-color: #198cff;
       cursor: pointer;
     }
+    .selected {
+      opacity: 0.8;
+      width: 136px !important;
+      margin: 7px;
+    }
     .icon {
       margin: 0 8px;
       font-size: 3rem !important;
@@ -199,11 +209,6 @@
     width: 80px;
     vertical-align: top;
     margin-top: 10px;
-  }
-  .selected {
-    opacity: 0.8;
-    width: 136px !important;
-    margin: 7px;
   }
   .pointer {
     cursor: pointer;
