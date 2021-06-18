@@ -38,10 +38,10 @@
     image-name5='mop3.jpg' image-name6='sheepdog3.jpg' image-name7='mop4.jpg' image-name8='sheepdog4.jpg' image-name9='mop5.jpg'
     @success="isShowDialogs7 = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
-    <!-- ステージ7 (あまおうとその他のいちご) -->
+    <!-- ステージ7 (キウイフルーツとたわし) -->
     <RecaptchaDialogs v-if="isShowDialogs7"
-    target-name='あまおう' stage-num='7' image-name1='amaou1.jpg' image-name2='strawberry1.jpg' image-name3='amaou2.jpg' image-name4='strawberry2.jpg'
-    image-name5='amaou3.jpg' image-name6='strawberry3.jpg' image-name7='amaou4.jpg' image-name8='strawberry4.jpg' image-name9='amaou5.jpg'
+    target-name='キウイフルーツ' stage-num='7' image-name1='kiwi1.jpg' image-name2='tawashi1.jpg' image-name3='kiwi2.jpg' image-name4='tawashi2.jpg'
+    image-name5='kiwi3.jpg' image-name6='tawashi3.jpg' image-name7='kiwi4.jpg' image-name8='tawashi4.jpg' image-name9='kiwi5.jpg'
     @success="isShowDialogs8 = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
     <!-- ステージ8 (小峠英二とその他のスキンヘッド) -->
