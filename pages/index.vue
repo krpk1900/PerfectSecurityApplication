@@ -2,11 +2,11 @@
   <div class="background">
     <!--button type="button" @click="write(); dataCount();">送信</button-->
     <!--p v-if="isFinished">あなたは【世界一堅牢なセキュリティ】を突破した【{{ count }}】人目のハッカーです。</p-->
-    <!-- ステージ1 (マシュマロと柴犬) -->
+    <!-- ステージ1 (ベーグルと犬) -->
     <RecaptchaDialogs v-if="isShowDialogs1"
-    target-name='焼マシュマロ' stage-num='1' image-name1='marshmallow1.jpg' image-name2='shiba1.jpg' image-name3='marshmallow2.jpg' image-name4='shiba2.jpg'
-    image-name5='marshmallow3.jpg' image-name6='shiba3.jpg' image-name7='marshmallow4.jpg' image-name8='shiba4.jpg' image-name9='marshmallow5.jpg'
-    @success="isShowDialogs2 = true;" @giveUp="reset(); isGiveUp = true;">
+    target-name='ベーグル' stage-num='1' image-name1='bagel1.jpg' image-name2='dog1.jpg' image-name3='bagel2.jpg' image-name4='dog2.jpg'
+    image-name5='bagel3.jpg' image-name6='dog3.jpg' image-name7='bagel4.jpg' image-name8='dog4.jpg' image-name9='bagel5.jpg'
+    @success="isShowDialogs2 = true;" @giveUp="reset(); isGiveUp = true">
     </RecaptchaDialogs>
     <!-- ステージ2 (フライドチキンとラブラドードル) -->
     <RecaptchaDialogs v-if="isShowDialogs2"
@@ -14,11 +14,11 @@
     image-name5='chicken3.jpg' image-name6='labradoodle3.jpg' image-name7='chicken4.jpg' image-name8='labradoodle4.jpg' image-name9='chicken5.jpg'
     @success="isShowDialogs3 = true;" @giveUp="reset(); isGiveUp = true;">
     </RecaptchaDialogs>
-    <!-- ステージ3 (ベーグルと犬) -->
+    <!-- ステージ3 (マシュマロと柴犬) -->
     <RecaptchaDialogs v-if="isShowDialogs3"
-    target-name='ベーグル' stage-num='3' image-name1='bagel1.jpg' image-name2='dog1.jpg' image-name3='bagel2.jpg' image-name4='dog2.jpg'
-    image-name5='bagel3.jpg' image-name6='dog3.jpg' image-name7='bagel4.jpg' image-name8='dog4.jpg' image-name9='bagel5.jpg'
-    @success="isShowDialogs4 = true;" @giveUp="reset(); isGiveUp = true">
+    target-name='焼マシュマロ' stage-num='3' image-name1='marshmallow1.jpg' image-name2='shiba1.jpg' image-name3='marshmallow2.jpg' image-name4='shiba2.jpg'
+    image-name5='marshmallow3.jpg' image-name6='shiba3.jpg' image-name7='marshmallow4.jpg' image-name8='shiba4.jpg' image-name9='marshmallow5.jpg'
+    @success="isShowDialogs4 = true;" @giveUp="reset(); isGiveUp = true;">
     </RecaptchaDialogs>
     <!-- ステージ4 (ネコとアイス) -->
     <RecaptchaDialogs v-if="isShowDialogs4"
@@ -102,9 +102,6 @@ export default {
     }
   },
   methods: {
-    shareMessage () {
-      return `https://twitter.com/share?url=https://sekigae.jp/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一堅牢なセキュリティ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】を突破した【${this.count}】人目のハッカーです。%0a`
-    },
     // firebase
     writeClearUsers () {
       database.ref("clearUsers").push({

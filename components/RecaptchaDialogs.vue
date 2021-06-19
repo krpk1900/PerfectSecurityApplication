@@ -13,7 +13,9 @@
         すべて選択し終わったら[確認]をクリックしてください。<br>
         <span v-if="isShowError" class="font-weight-bold red--text text--darken-4">
           間違っています。
-          分からない場合は左下の更新ボタンを押してください。
+          分からない場合は左下にある<br class="br-pc">
+          <v-icon class="font-weight-bold red--text text--darken-4">mdi-refresh</v-icon>
+          ボタンを押してください。
         </span>
       </v-card-subtitle>
       </div>
@@ -132,6 +134,9 @@
 
 <style scoped>
   @media screen and (max-width: 480px) {
+    .br-pc {
+      display: none;
+    }
     .target-name {
       display: inline-block !important;
       font-size: 30px !important;
@@ -203,10 +208,6 @@
     }
   }
 
-  /* vuetify上書き */
-  .v-dialog:not(.v-dialog--fullscreen) {
-    max-height: 95% !important;
-  }
   .stage-num {
     display: inline-block !important;
     width: 70px;
@@ -215,6 +216,12 @@
   }
   .pointer {
     cursor: pointer;
+  }
+</style>
+<style>
+/* vuetify上書き */
+  .v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 95% !important;
   }
 </style>
 
