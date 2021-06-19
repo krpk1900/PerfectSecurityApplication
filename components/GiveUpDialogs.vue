@@ -12,7 +12,7 @@
         あなたは世界一堅牢な<br class="br-sp">セキュリティに破れた<br>
         <br><br>
         <span style="font-size: 100px !important;" class="red--text text--lighten-1">{{this.giveUpCount}}</span>
-        人目の<br class="br-sp">負け犬ハッカーです。
+        人目の<br class="br-sp">負け犬ハッカーです…
       </v-card-text>
 
       <div style="text-align: center;">
@@ -71,10 +71,10 @@ export default {
   }),
   methods: {
     shareMessage () {
-      return `https://twitter.com/share?url=https://perfectsecurityapplication.web.app/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一セキュリティが堅牢なアプリ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】に破れた【${this.giveUpCount}】人目の負け犬ハッカーです。%0a`
+      return `https://twitter.com/share?url=https://perfect-security.jp/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一セキュリティが堅牢なアプリ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】に破れた【${this.giveUpCount}】人目の負け犬ハッカーです…%0a`
     },
     send () {
-      console.log('send()が呼ばれました。')
+      // console.log('send()が呼ばれました。')
       this.$emit("restart", true);
     }
   },

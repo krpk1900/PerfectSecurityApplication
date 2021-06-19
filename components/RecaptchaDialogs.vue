@@ -6,48 +6,50 @@
     <v-card>
       <div class="light-blue white--text">
 
-      <v-card-title class="text-h5 text-sm-h3 font-weight-black target-name">{{ targetName }}</v-card-title>
+      <span class="text-h5 text-sm-h3 font-weight-black target-name">{{ targetName }}</span>
       <span class="text-h6 font-weight-black stage-num">({{ stageNum }}/10)</span>
       <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
         <span v-if="isShowError" class="font-weight-bold red--text text--darken-4">
           間違っています。
-          分からない場合は左下の更新ボタンを押してください。
+          分からない場合は左下にある<br class="br-pc">
+          <v-icon class="font-weight-bold red--text text--darken-4">mdi-refresh</v-icon>
+          ボタンを押してください。
         </span>
       </v-card-subtitle>
       </div>
 
       <v-card-actions style="margin-top: 5px;">
-        <span class="picture-area">
+        <span class="picture-area" style="margin-left: auto;">
           <img :src="showImageName1" class="images" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
         <span class="picture-area">
           <img :src="showImageName2" class="images" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
         </span>
-        <span class="picture-area">
+        <span class="picture-area" style="margin-right: auto;">
           <img :src="showImageName3" class="images" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
         </span>
       </v-card-actions>
       <v-card-actions>
-        <span class="picture-area">
+        <span class="picture-area" style="margin-left: auto;">
           <img :src="showImageName4" class="images" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
         </span>
         <span class="picture-area">
           <img :src="showImageName5" class="images" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
         </span>
-        <span class="picture-area">
+        <span class="picture-area" style="margin-right: auto;">
           <img :src="showImageName6" class="images" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
         </span>
       </v-card-actions>
       <v-card-actions>
-        <span class="picture-area">
+        <span class="picture-area" style="margin-left: auto;">
           <img :src="showImageName7" class="images" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
         </span>
         <span class="picture-area">
           <img :src="showImageName8" class="images" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
         </span>
-        <span class="picture-area">
+        <span class="picture-area" style="margin-right: auto;">
           <img :src="showImageName9" class="images" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
         </span>
       </v-card-actions>
@@ -132,21 +134,31 @@
 
 <style scoped>
   @media screen and (max-width: 480px) {
+    .br-pc {
+      display: none;
+    }
     .target-name {
       display: inline-block !important;
       font-size: 30px !important;
-      width: 240px;
+      width: 245px;
+      padding: 16px;
     }
     .images {
       width: 90px;
+      transition: all 0.15s ease;
     }
     .picture-area {
       display: inline-block;
       width: 90px;
       height: 90px;
       margin: -5px 5px;
-      background-color: royalblue;
+      background-color: #198cff;
       cursor: pointer;
+    }
+    .selected {
+      opacity: 0.8;
+      width: 80px !important;
+      margin: 5px;
     }
     .icon {
       margin: 0 3px;
@@ -161,18 +173,26 @@
   @media screen and (min-width: 481px) {
     .target-name {
       display: inline-block !important;
-      width: 410px;
+      width: 420px;
+      padding: 16px;
+      margin: 0 auto 0 0 !important;
     }
     .images {
       width: 150px;
+      transition: all 0.15s ease;
     }
     .picture-area {
       display: inline-block;
       width: 150px;
       height: 150px;
       margin: -5px 5px;
-      background-color: royalblue;
+      background-color: #198cff;
       cursor: pointer;
+    }
+    .selected {
+      opacity: 0.8;
+      width: 136px !important;
+      margin: 7px;
     }
     .icon {
       margin: 0 8px;
@@ -188,21 +208,20 @@
     }
   }
 
-  /* vuetify上書き */
-  .v-dialog:not(.v-dialog--fullscreen) {
-    max-height: 95% !important;
-  }
   .stage-num {
-    display: inline-block;
-    width: 80px;
+    display: inline-block !important;
+    width: 70px;
     vertical-align: top;
-    margin-top: 10px;
-  }
-  .selected {
-    opacity: 0.7;
+    margin: 10px 0 0 auto !important;
   }
   .pointer {
     cursor: pointer;
+  }
+</style>
+<style>
+/* vuetify上書き */
+  .v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 95% !important;
   }
 </style>
 
@@ -240,7 +259,7 @@ export default {
   }),
   methods: {
     test () {
-      console.log('test');
+      // console.log('test');
     },
     check () {
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
@@ -260,7 +279,7 @@ export default {
       database.ref("giveUpUsers").push({
         id: "id",
       });
-      console.log('ギブアップしたユーザーをデータベースに書き込みました。')
+      // console.log('ギブアップしたユーザーをデータベースに書き込みました。')
     },
     shuffleArray (arr) {
       for(var i =arr.length-1 ; i>0 ;i--){
@@ -280,7 +299,7 @@ export default {
         vueInstance.showImageName7 = imageNames[3];
         vueInstance.showImageName9 = imageNames[4];
         timeConuter += 1;
-        console.log('繰り返し')
+        // console.log('繰り返し')
       }
       let intervalId = setInterval( ()=> {
         setImages();
