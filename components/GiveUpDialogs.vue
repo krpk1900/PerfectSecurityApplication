@@ -74,7 +74,7 @@ export default {
       return `https://twitter.com/share?url=https://perfect-security.jp/%0a&via=krpk1900_dev&related=krpk1900_dev&hashtags=世界一セキュリティが堅牢なアプリ,クソアプリ%0a&text=あなたは【世界一堅牢なセキュリティ】に破れた【${this.giveUpCount}】人目の負け犬ハッカーです…%0a`
     },
     send () {
-      console.log('send()が呼ばれました。')
+      // console.log('send()が呼ばれました。')
       this.$emit("restart", true);
     }
   },

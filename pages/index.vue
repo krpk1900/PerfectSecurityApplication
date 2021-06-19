@@ -107,22 +107,22 @@ export default {
       database.ref("clearUsers").push({
         id: "id",
       });
-      console.log('クリアしたユーザーをデータベースに書き込みました。')
+      // console.log('クリアしたユーザーをデータベースに書き込みました。')
     },
     readClearUsers () {
       database.ref("clearUsers").once('value', parent => {
         this.clearCount = parent.numChildren()
-        console.log(`clearCount=${this.clearCount}`)
+        // console.log(`clearCount=${this.clearCount}`)
       });
     },
     readGiveUpUsers () {
       database.ref("giveUpUsers").once('value', parent => {
         this.giveUpCount = parent.numChildren()
-        console.log(`giveUpCount=${this.giveUpCount}`)
+        // console.log(`giveUpCount=${this.giveUpCount}`)
       });
     },
     reset () {
-      console.log("すべてfalseにリセット")
+      // console.log("すべてfalseにリセット")
       this.isShowDialogs1 = false;
       this.isShowDialogs2 = false;
       this.isShowDialogs3 = false;
@@ -137,7 +137,7 @@ export default {
       this.isGiveUp = false;
     },
     receive () {
-      console.log("受け取りました。")
+      // console.log("受け取りました。")
       this.isShowDialogs1 = true;
       this.isShowDialogs2 = false;
       this.isShowDialogs3 = false;

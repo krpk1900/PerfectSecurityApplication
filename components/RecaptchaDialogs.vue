@@ -259,7 +259,7 @@ export default {
   }),
   methods: {
     test () {
-      console.log('test');
+      // console.log('test');
     },
     check () {
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
@@ -279,7 +279,7 @@ export default {
       database.ref("giveUpUsers").push({
         id: "id",
       });
-      console.log('ギブアップしたユーザーをデータベースに書き込みました。')
+      // console.log('ギブアップしたユーザーをデータベースに書き込みました。')
     },
     shuffleArray (arr) {
       for(var i =arr.length-1 ; i>0 ;i--){
@@ -299,7 +299,7 @@ export default {
         vueInstance.showImageName7 = imageNames[3];
         vueInstance.showImageName9 = imageNames[4];
         timeConuter += 1;
-        console.log('繰り返し')
+        // console.log('繰り返し')
       }
       let intervalId = setInterval( ()=> {
         setImages();
