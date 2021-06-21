@@ -1,5 +1,5 @@
 # 世界一セキュリティが堅牢なアプリ
-[![Nuxt](https://img.shields.io/badge/Nuxt-v2.15.3-brightgreen)](https://img.shields.io/badge/Nuxt-v2.15.3-brightgreen)
+[![Nuxt](https://img.shields.io/badge/Nuxt-v2.15.6-brightgreen)](https://img.shields.io/badge/Nuxt-v2.15.6-brightgreen)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1789b738-3cc0-4887-b1ad-2790e8b91721/deploy-status)](https://app.netlify.com/sites/sekigae/deploys)
 
 [https://sekigae.jp/](https://sekigae.jp/)
