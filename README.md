@@ -10,7 +10,9 @@
   <img src="https://user-images.githubusercontent.com/72296262/115614380-9f34f780-a328-11eb-93eb-a8b020c04b2f.gif" />
 </a>
 
-reCAPTCHAをパロディにしたアプリです。
+[reCAPTCHA](https://www.google.com/recaptcha/about/)をパロディにしたアプリです。  
+指定された物体が写っている画像をすべて選択することができるかどうかによって、人間かロボットかを判断します。  
+全部で10ステージあります。
 
 # 使用技術
 - Nuxt.js 2.15.6
