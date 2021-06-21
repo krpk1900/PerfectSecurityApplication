@@ -7,7 +7,7 @@
 # サービス概要
 
 <a href="https://perfect-security.jp/">
-  <img width="400" src="https://user-images.githubusercontent.com/72296262/122736426-fb7dae80-d2ba-11eb-8c18-9f56fef17568.gif" />
+  <img src="https://user-images.githubusercontent.com/72296262/122736426-fb7dae80-d2ba-11eb-8c18-9f56fef17568.gif" />
 </a>
 
 [reCAPTCHA](https://www.google.com/recaptcha/about/)をパロディにしたアプリです。  
