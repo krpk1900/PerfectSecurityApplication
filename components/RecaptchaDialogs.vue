@@ -6,62 +6,74 @@
     <v-card>
       <div class="light-blue white--text">
 
-      <v-card-title class="text-h3 font-weight-black" style="width: 410px; display: inline-block;">{{ targetName }}</v-card-title>
-      <span class="font-weight-black text-h6" style="display: inline-block; width: 80px; vertical-align: top; margin-top: 10px;">({{ stageNum }}/10)</span>
+      <span class="text-h5 text-sm-h3 font-weight-black target-name">{{ targetName }}</span>
+      <span class="text-h6 font-weight-black stage-num">({{ stageNum }}/10)</span>
       <v-card-subtitle class="text-body-1 font-weight-black white--text" style="padding: 0 24px 5px !important;">
         のタイルをすべて選択してください。<br>
         すべて選択し終わったら[確認]をクリックしてください。<br>
-        <span style="color: #dc3545 !important;" class="font-weight-bold">
-          {{ wrongText }}
+        <span v-if="isShowError" class="font-weight-bold red--text text--darken-4">
+          間違っています。
+          分からない場合は左下にある<br class="br-pc">
+          <v-icon class="font-weight-bold red--text text--darken-4">mdi-refresh</v-icon>
+          ボタンを押してください。
         </span>
       </v-card-subtitle>
       </div>
 
       <v-card-actions style="margin-top: 5px;">
-        <span class="picture-area">
-          <img :src="imageName1" width="150px" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
+        <span class="picture-area" style="margin-left: auto;">
+          <img :src="showImageName1" class="images" @click="isSelected1=!isSelected1" :class="{ selected: isSelected1}">
         </span>
         <span class="picture-area">
-          <img :src="imageName2" width="150px" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
+          <img :src="showImageName2" class="images" @click="isSelected2=!isSelected2" :class="{ selected: isSelected2}">
         </span>
-        <span class="picture-area">
-          <img :src="imageName3" width="150px" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
-        </span>
-      </v-card-actions>
-      <v-card-actions>
-        <span class="picture-area">
-          <img :src="imageName4" width="150px" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
-        </span>
-        <span class="picture-area">
-          <img :src="imageName5" width="150px" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
-        </span>
-        <span class="picture-area">
-          <img :src="imageName6" width="150px" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+        <span class="picture-area" style="margin-right: auto;">
+          <img :src="showImageName3" class="images" @click="isSelected3=!isSelected3" :class="{ selected: isSelected3}">
         </span>
       </v-card-actions>
       <v-card-actions>
-        <span class="picture-area">
-          <img :src="imageName7" width="150px" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
+        <span class="picture-area" style="margin-left: auto;">
+          <img :src="showImageName4" class="images" @click="isSelected4=!isSelected4" :class="{ selected: isSelected4}">
         </span>
         <span class="picture-area">
-          <img :src="imageName8" width="150px" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+          <img :src="showImageName5" class="images" @click="isSelected5=!isSelected5" :class="{ selected: isSelected5}">
+        </span>
+        <span class="picture-area" style="margin-right: auto;">
+          <img :src="showImageName6" class="images" @click="isSelected6=!isSelected6" :class="{ selected: isSelected6}">
+        </span>
+      </v-card-actions>
+      <v-card-actions>
+        <span class="picture-area" style="margin-left: auto;">
+          <img :src="showImageName7" class="images" @click="isSelected7=!isSelected7" :class="{ selected: isSelected7}">
         </span>
         <span class="picture-area">
-          <img :src="imageName9" width="150px" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
+          <img :src="showImageName8" class="images" @click="isSelected8=!isSelected8" :class="{ selected: isSelected8}">
+        </span>
+        <span class="picture-area" style="margin-right: auto;">
+          <img :src="showImageName9" class="images" @click="isSelected9=!isSelected9" :class="{ selected: isSelected9}">
         </span>
       </v-card-actions>
       <v-card-actions>
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <div @click="test()" class="pointer">
-              <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-refresh</v-icon>
+            <div @click="shuffleImages();" class="pointer">
+              <v-icon v-bind="attrs" v-on="on" class="icon">mdi-refresh</v-icon>
             </div>
           </template>
           <span>更新</span>
         </v-tooltip>
 
         <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <div @click="playMusic();" class="pointer">
+              <v-icon v-bind="attrs" v-on="on" class="icon">mdi-headset</v-icon>
+            </div>
+          </template>
+          <span>音が鳴ります</span>
+        </v-tooltip>
+
+        <!--v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">
               <v-dialog v-model="isShowMessage" width="600" hide-overlay>
@@ -80,14 +92,14 @@
             </div>
           </template>
           <span>このアプリについて</span>
-        </v-tooltip>
+        </v-tooltip-->
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">
               <v-dialog v-model="isShowPolicy" width="600" hide-overlay>
                 <template v-slot:activator="{ on, attrs }">
-                  <v-icon v-bind="attrs" v-on="on" class="icon text-h3">mdi-information-outline</v-icon>
+                  <v-icon v-bind="attrs" v-on="on" class="icon">mdi-information-outline</v-icon>
                 </template>
                 <v-card>
                   <v-card-title class="headline grey lighten-2 font-weight-black" style="display: block;">このアプリについて
@@ -113,33 +125,103 @@
           <span>このアプリについて</span>
         </v-tooltip>
 
-        <v-btn @click="giveUp(); writeGiveUpUsers();" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="100px" height="45px">諦める</v-btn>
-        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn" tile width="150px" height="45px">確認</v-btn>
+        <v-btn @click="giveUp(); writeGiveUpUsers();" class="light-blue text-body-1 font-weight-bold white--text btn" tile>諦める</v-btn>
+        <v-btn @click="check" class="light-blue text-body-1 font-weight-bold white--text btn btn-confirm" tile>確認</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
-<style>
-  .icon {
-    margin: 0 10px;
+<style scoped>
+  @media screen and (max-width: 480px) {
+    .br-pc {
+      display: none;
+    }
+    .target-name {
+      display: inline-block !important;
+      font-size: 30px !important;
+      width: 245px;
+      padding: 16px;
+    }
+    .images {
+      width: 90px;
+      transition: all 0.15s ease;
+    }
+    .picture-area {
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      margin: -5px 5px;
+      background-color: #198cff;
+      cursor: pointer;
+    }
+    .selected {
+      opacity: 0.8;
+      width: 80px !important;
+      margin: 5px;
+    }
+    .icon {
+      margin: 0 3px;
+      font-size: 2.5rem !important;
+    }
+    .btn {
+      margin: 0 0 0 auto;
+      width: 70px;
+      height: 45px !important;
+    }
   }
-  .btn {
-    margin: 0 0 0 auto;
+  @media screen and (min-width: 481px) {
+    .target-name {
+      display: inline-block !important;
+      width: 420px;
+      padding: 16px;
+      margin: 0 auto 0 0 !important;
+    }
+    .images {
+      width: 150px;
+      transition: all 0.15s ease;
+    }
+    .picture-area {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      margin: -5px 5px;
+      background-color: #198cff;
+      cursor: pointer;
+    }
+    .selected {
+      opacity: 0.8;
+      width: 136px !important;
+      margin: 7px;
+    }
+    .icon {
+      margin: 0 8px;
+      font-size: 3rem !important;
+    }
+    .btn {
+      margin: 0 0 0 auto;
+      width: 100px;
+      height: 45px !important;
+    }
+    .btn-confirm {
+      width: 150px !important;
+    }
   }
-  .selected {
-    opacity: 0.7;
-  }
-  .picture-area {
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin: -5px 5px;
-    background-color: royalblue;
-    cursor: pointer;
+
+  .stage-num {
+    display: inline-block !important;
+    width: 70px;
+    vertical-align: top;
+    margin: 10px 0 0 auto !important;
   }
   .pointer {
     cursor: pointer;
+  }
+</style>
+<style>
+/* vuetify上書き */
+  .v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 95% !important;
   }
 </style>
 
@@ -158,23 +240,35 @@ export default {
     isSelected7: false,
     isSelected8: false,
     isSelected9: false,
-    wrongText: '　',
     isShowPolicy: false,
     isShowMessage: false,
+    isShowError: false,
     giveUpCount: 0,
+    showImageName1: '',
+    showImageName2: '',
+    showImageName3: '',
+    showImageName4: '',
+    showImageName5: '',
+    showImageName6: '',
+    showImageName7: '',
+    showImageName8: '',
+    showImageName9: '',
+    showImageName10: '',
+    showImageName11: '',
+    showImageName12: '',
   }),
   methods: {
     test () {
-      console.log('test');
+      // console.log('test');
     },
     check () {
       if( this.isSelected1 && !this.isSelected2 && this.isSelected3 && !this.isSelected4 && this.isSelected5
           && !this.isSelected6 && this.isSelected7 && !this.isSelected8 && this.isSelected9) {
-        this.wrongText = '　';
+        this.isShowError = false;
         this.isShowDialog = false;
         this.$emit('success')
       } else {
-        this.wrongText = '間違っています。ヒント：左下のアイコン'
+        this.isShowError = true;
       }
     },
     giveUp () {
@@ -185,16 +279,58 @@ export default {
       database.ref("giveUpUsers").push({
         id: "id",
       });
-      console.log('ギブアップしたユーザーをデータベースに書き込みました。')
+      // console.log('ギブアップしたユーザーをデータベースに書き込みました。')
     },
-    /*readGiveUpUsers () {
-      database.ref("giveUpUsers").once('value', parent => {
-        this.giveUpCount = parent.numChildren();
-        console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
-      });
-      this.$emit('giveUpCount', this.giveUpCount)
-      //console.log(`RecaptchaDialogsのgiveUpCountは${this.giveUpCount}`)
-    },*/
+    shuffleArray (arr) {
+      for(var i =arr.length-1 ; i>0 ;i--){
+        var j = Math.floor( Math.random() * (i + 1) );
+        [arr[i],arr[j]]=[arr[j],arr[i]];
+      }
+    },
+    shuffleImages () {
+      let vueInstance = this
+      let timeConuter = 0
+      let imageNames = [this.imageName1, this.imageName3, this.imageName5, this.imageName7, this.imageName9];
+      let setImages = function(){
+        vueInstance.shuffleArray(imageNames);
+        vueInstance.showImageName1 = imageNames[0];
+        vueInstance.showImageName3 = imageNames[1];
+        vueInstance.showImageName5 = imageNames[2];
+        vueInstance.showImageName7 = imageNames[3];
+        vueInstance.showImageName9 = imageNames[4];
+        timeConuter += 1;
+        // console.log('繰り返し')
+      }
+      let intervalId = setInterval( ()=> {
+        setImages();
+        if(timeConuter > 5){
+          clearInterval(intervalId);
+        }
+      }, 100);
+    },
+    playMusic () {
+      let soundFileNames = ['sound1.mp3', 'sound2.mp3', 'sound3.mp3', 'sound4.mp3', 'sound5.mp3', 'sound6.mp3', 'sound7.mp3', 'sound8.mp3',
+                            'sound9.mp3', 'sound10.mp3', 'sound11.mp3', 'sound12.mp3', 'sound13.mp3', 'sound14.mp3', 'sound15.mp3', 'sound16.mp3'
+                            ]
+      this.shuffleArray(soundFileNames)
+      let soundFileName = soundFileNames[0]
+      let sound = new Audio(soundFileName);
+      sound.play();
+    },
+  },
+  created: function () {
+    this.showImageName1 = this.imageName1;
+    this.showImageName2 = this.imageName2;
+    this.showImageName3 = this.imageName3;
+    this.showImageName4 = this.imageName4;
+    this.showImageName5 = this.imageName5;
+    this.showImageName6 = this.imageName6;
+    this.showImageName7 = this.imageName7;
+    this.showImageName8 = this.imageName8;
+    this.showImageName9 = this.imageName9;
+    this.showImageName10 = this.imageName10;
+    this.showImageName11 = this.imageName11;
+    this.showImageName12 = this.imageName12;
   },
   props: {
     targetName: {
